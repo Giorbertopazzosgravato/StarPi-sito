@@ -1,11 +1,17 @@
 <script setup>
 import NavBar from "@/components/common/NavBar.vue";
-import ImageAndSlogan from "@/components/ImageAndSlogan.vue";
+import ImageAndSlogan from "@/components/home_page/ImageAndSlogan.vue";
+import Obiettivo from "@/components/home_page/Obiettivo.vue";
+import Gradiente_Homepage from "@/assets/Gradiente_Homepage.vue";
+import ComeCollaboriamo from "@/components/home_page/ComeCollaboriamo.vue";
 </script>
 
 <template>
+	<Gradiente_Homepage/>
 	<NavBar/>
 	<ImageAndSlogan/>
+	<Obiettivo/>
+	<ComeCollaboriamo/>
 	<br>
 	<br>
 	<br>
@@ -133,4 +139,5 @@ import ImageAndSlogan from "@/components/ImageAndSlogan.vue";
 </template>
 
 <style scoped>
+
 </style>

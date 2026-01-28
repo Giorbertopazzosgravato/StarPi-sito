@@ -4,7 +4,7 @@
 
 <template>
 	<div>
-		<img src="../assets/background_logo_home_page.png" alt="background logo"/>
+		<img src="../../assets/background_logo_home_page.png" alt="background logo"/>
 		<p>We are proud to present the student team, founded in 2024 in Pisa, which designs,<br>
 			manufactures and tests rocket models to compete in EuRoC.</p>
 		<hr>
@@ -27,6 +27,7 @@
 		font-size: 32px;
 	}
 	hr{
+		margin-top: 5vh;
 		width: 90vw;
 	}
 </style>
