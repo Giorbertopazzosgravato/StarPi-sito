@@ -1,124 +1,198 @@
 <script setup>
-import {onMounted, onUnmounted, reactive, ref} from "vue";
-	console.log("(=^･ω･^=) <-mao")
-	const card_template = reactive({
-		title: "TITOLONE",
+import { onMounted, onUnmounted, reactive, ref } from "vue";
+
+// I feel like shit, I've basically vibe coded it all after fighting against css for 2 days straight.
+// It looks so good tho, I can't deny it
+// gemini in 3 minutes was able to do what I couldn't do in 2 days
+// fuck my life
+// oh well, this part will be rewritten and deleted as soon as we have a rocket anyways
+// here's a cat:
+console.log("(=^･ω･^=) <-mao")
+
+const cards = reactive([
+	{
+		title: "FLIGHT DYNAMICS",
 		descrizione: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-		image_src: "/car.gif",
-		width: "250px",
-	});
-	const cards = reactive([
-		{
-			title: "FLIGHT DYNAMICS",
-			descrizione: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-			image_src: new URL("../../assets/home_page/flight-dynamics-icon.png", import.meta.url).href,
-			width: "250px",
-		},
-		{
-			title: "AVIONICS",
-			descrizione: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-			image_src: new URL("../../assets/home_page/avionics-icon.png", import.meta.url).href,
-			width: "250px",
-		},
-		{
-			title: "PAYLOAD",
-			descrizione: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-			image_src: new URL("../../assets/home_page/payload-icon.png", import.meta.url).href,
-			width: "250px",
-		},
-		{
-			title: "RECOVERY SYSTEM",
-			descrizione: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-			image_src: new URL("../../assets/home_page/recovery-system-icon.png", import.meta.url).href,
-			width: "250px",
-		},
-		{
-			title: "PROPULSION",
-			descrizione: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-			image_src: new URL("../../assets/home_page/propulsion-icon.png", import.meta.url).href,
-			width: "250px",
-		},
-		{
-			title: "LOGISTICS & MARKETING",
-			descrizione: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-			image_src: new URL("../../assets/home_page/logistics-icon.png", import.meta.url).href,
-			width: "250px",
-		},
-	]);
+		image_src: new URL("../../assets/home_page/flight-dynamics-icon.png", import.meta.url).href,
+	},
+	{
+		title: "AVIONICS",
+		descrizione: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+		image_src: new URL("../../assets/home_page/avionics-icon.png", import.meta.url).href,
+	},
+	{
+		title: "PAYLOAD",
+		descrizione: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+		image_src: new URL("../../assets/home_page/payload-icon.png", import.meta.url).href,
+	},
+	{
+		title: "RECOVERY SYSTEM",
+		descrizione: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+		image_src: new URL("../../assets/home_page/recovery-system-icon.png", import.meta.url).href,
+	},
+	{
+		title: "PROPULSION",
+		descrizione: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+		image_src: new URL("../../assets/home_page/propulsion-icon.png", import.meta.url).href,
+	},
+	{
+		title: "LOGISTICS & MARKETING",
+		descrizione: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+		image_src: new URL("../../assets/home_page/logistics-icon.png", import.meta.url).href,
+	},
+]);
 
-	const current_index = ref(4);
-	const next_card = () =>{
-		current_index.value = (current_index.value + 1) % cards.length;
+const current_index = ref(0);
+const progress = ref(0);
+const is_paused = ref(false);
+
+// Duration in milliseconds
+const duration = 6000;
+
+let last_time;
+let animation_frame;
+
+const next_card = () => {
+	current_index.value = (current_index.value + 1) % cards.length;
+}
+
+const animate = () => {
+	const now = performance.now();
+
+	if (!last_time) last_time = now;
+	const delta = now - last_time;
+
+	if (!is_paused.value) {
+		const increment = (delta / duration) * 100;
+		progress.value += increment;
+
+		if (progress.value >= 100) {
+			progress.value = 0;
+			next_card();
+		}
 	}
-	let timer;
-	onMounted(()=>{
-		timer = setInterval(next_card, 1000);
-	});
-	onUnmounted(()=>{
-		clearInterval(timer)
-	})
 
+	last_time = now;
+	animation_frame = requestAnimationFrame(animate);
+}
+
+const pause_timer = () => {
+	is_paused.value = true;
+}
+
+const resume_timer = () => {
+	is_paused.value = false;
+	last_time = performance.now();
+}
+
+onMounted(() => {
+	last_time = performance.now();
+	animation_frame = requestAnimationFrame(animate);
+});
+
+onUnmounted(() => {
+	cancelAnimationFrame(animation_frame);
+})
 </script>
 
 <template>
-<div class="container">
-	<h1 class="primo_titolo">COME COLLABORIAMO</h1>
-	<div class="card_container">
-		<img :src="cards[current_index].image_src" alt="immagine" :width="cards[current_index].width" height="auto">
-		<div class="text_container">
-			<h1 class="titolone"><b>{{cards[current_index].title}}</b></h1>
-			<p>{{cards[current_index].descrizione}}</p>
+	<div class="container">
+		<h1 class="primo_titolo">COME COLLABORIAMO</h1>
+
+		<div class="card_container" @mouseenter="pause_timer" @mouseleave="resume_timer">
+
+			<div class="progress-container">
+				<div class="progress-bar" :style="{ width: progress + '%' }"></div>
+			</div>
+
+			<img :src="cards[current_index].image_src" alt="immagine" width="250px">
+
+			<div class="text_container">
+				<h1 class="titolone"><b>{{cards[current_index].title}}</b></h1>
+				<p>{{cards[current_index].descrizione}}</p>
+			</div>
 		</div>
 	</div>
-</div>
 </template>
-<script>
-
-</script>
 
 <style scoped>
-.card_container{
+.container {
+	color: white;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.primo_titolo {
+	text-align: center;
+	margin-bottom: 2rem;
+	font-size: 4em;
+}
+
+/* --- MAIN CONTAINER STYLES --- */
+.card_container {
+	/* FIXED DIMENSIONS */
+	width: 50vw;
+	height: 50vh;
+	min-height: fit-content;
+
+	/* CENTERING CONTENT */
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 4rem;
+
+	/* VISUALS */
 	background-color: #29446E;
 	border-radius: 24px;
+	position: relative;
+	overflow: hidden;
+	padding: 0 5%;
 
-	margin-left: auto;
-	margin-right: auto;
+	/* INTERACTION */
+	cursor: default;
+}
 
-	min-height: 30%;
-	max-height: 30%;
+/* --- LOAD BAR --- */
+.progress-container {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 6px;
+	background-color: rgba(0, 0, 0, 0.2);
+}
 
-	max-width: 50%;
-	min-width: 40%;
+.progress-bar {
+	height: 100%;
+	background-color: #4CC9F0; /* Change this to your preferred color */
+	width: 0;
+}
 
+img {
+	max-height: 80%;
+	object-fit: contain;
+	flex-shrink: 0; /* Prevents image from being squashed */
+}
 
-	display: flex;
-	align-items: center;
-	gap: 5vw;
-	flex-wrap: wrap;
-	padding-top: 5%;
-	padding-bottom: 5%;
-	padding-left: 5%;
-}
-.text_container{
-	left: auto;
-	right: 10%;
-	//flex: 1;
-	min-width: 250px;
-}
-.container{
-	color: white;
-}
-.primo_titolo{
-	text-align: center;
-}
-.titolone{
-	font-size: 3em;
-}
-p{
+.text_container {
+	flex: 1;
 	max-width: 17em;
-	font-size: 20px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
 }
-img	{
-	max-width: 100%;
+
+.titolone {
+	font-size: 3em;
+	margin: 0 0 1rem 0;
+	line-height: 1.1;
+}
+
+p {
+	font-size: 1.3em;
+	line-height: 1.5;
+	margin: 0;
 }
 </style>

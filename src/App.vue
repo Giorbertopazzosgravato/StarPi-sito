@@ -12,6 +12,7 @@ import ComeCollaboriamo from "@/components/home_page/ComeCollaboriamo.vue";
 	<ImageAndSlogan/>
 	<Obiettivo/>
 	<ComeCollaboriamo/>
+	<hr style="width: 80vw; margin-top: 10vh;">
 	<br>
 	<br>
 	<br>
