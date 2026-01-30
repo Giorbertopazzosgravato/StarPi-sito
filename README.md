@@ -36,3 +36,19 @@ npm run dev
 ```sh
 npm run build
 ```
+
+
+============================================================================================================
+# Todo:
+## Home page:
+- [ ] newsletter
+- [ ] sponsors
+- [ ] socials
+
+## tutto il resto:
+- [ ] pagina "news"
+- [ ] pagina "team"
+- [ ] pagina "dipartimenti"
+- [ ] pagina "galleria"
+- [ ] fare il sito compatibile con telefono (mannaggia a me e a quando mi sono improvvisato web dev)
+- [ ] login e area riservata
