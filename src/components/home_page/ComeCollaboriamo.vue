@@ -135,7 +135,6 @@ onUnmounted(() => {
 	/* FIXED DIMENSIONS */
 	width: 50vw;
 	height: 50vh;
-	min-height: fit-content;
 
 	/* CENTERING CONTENT */
 	display: flex;
@@ -194,5 +193,14 @@ p {
 	font-size: 1.3em;
 	line-height: 1.5;
 	margin: 0;
+	max-height: 10em;
+	overflow: scroll;
 }
+p::-webkit-scrollbar{width: 10px; height: 50% }
+p::-webkit-scrollbar-button{ display: none; }
+p::-webkit-scrollbar-track{ display: none; }
+p::-webkit-scrollbar-track-piece{ display: none; }
+p::-webkit-scrollbar-thumb{ border-radius: 24px; background-color: rgba(0, 12, 38, 0.5); }
+p::-webkit-scrollbar-corner{ color: red; }
+
 </style>

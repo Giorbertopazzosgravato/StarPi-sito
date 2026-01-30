@@ -4,6 +4,7 @@ import ImageAndSlogan from "@/components/home_page/ImageAndSlogan.vue";
 import Obiettivo from "@/components/home_page/Obiettivo.vue";
 import Gradiente_Homepage from "@/assets/home_page/Gradiente_Homepage.vue";
 import ComeCollaboriamo from "@/components/home_page/ComeCollaboriamo.vue";
+import NewsLetterPlug from "@/components/home_page/NewsLetterPlug.vue";
 </script>
 
 <template>
@@ -13,6 +14,7 @@ import ComeCollaboriamo from "@/components/home_page/ComeCollaboriamo.vue";
 	<Obiettivo/>
 	<ComeCollaboriamo/>
 	<hr style="width: 80vw; margin-top: 10vh;">
+	<NewsLetterPlug/>
 	<br>
 	<br>
 	<br>
