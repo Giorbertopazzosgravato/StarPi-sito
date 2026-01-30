@@ -22,5 +22,6 @@ import NavBarOption from "@/components/common/NavBarOption.vue";
 		display: flex;
 		background-color: #213152;
 		height: max-content;
+		z-index: 9999;
 	}
 </style>

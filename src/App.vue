@@ -2,7 +2,7 @@
 import NavBar from "@/components/common/NavBar.vue";
 import ImageAndSlogan from "@/components/home_page/ImageAndSlogan.vue";
 import Obiettivo from "@/components/home_page/Obiettivo.vue";
-import Gradiente_Homepage from "@/assets/Gradiente_Homepage.vue";
+import Gradiente_Homepage from "@/assets/home_page/Gradiente_Homepage.vue";
 import ComeCollaboriamo from "@/components/home_page/ComeCollaboriamo.vue";
 </script>
 
