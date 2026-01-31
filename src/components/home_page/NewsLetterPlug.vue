@@ -6,7 +6,9 @@ import IscrizioneNewsLetter from "@/components/home_page/NewsLetter/IscrizioneNe
 
 <template>
 	<div class="container">
-		<NewsContainer class="NewsContainer"/>
+		<div class="NewsContainer">
+			<NewsContainer />
+		</div>
 		<hr>
 		<IscrizioneNewsLetter/>
 	</div>
@@ -14,9 +16,14 @@ import IscrizioneNewsLetter from "@/components/home_page/NewsLetter/IscrizioneNe
 
 <style scoped>
 .container{
-
+	background-color: red;
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 80vw;
 }
 .NewsContainer{
-
+	margin-left: auto;
+	margin-right: auto;
+	max-width: fit-content;
 }
 </style>
