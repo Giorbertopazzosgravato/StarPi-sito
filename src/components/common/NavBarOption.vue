@@ -50,6 +50,7 @@ div {
   background-color: #29446e;
 }
 .right-aligned {
+  border-top: 9px solid #9a06f0;
   margin-left: auto;
 }
 </style>
