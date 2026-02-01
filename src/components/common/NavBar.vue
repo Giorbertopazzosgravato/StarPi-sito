@@ -11,7 +11,7 @@ import NavBarOption from "@/components/common/NavBarOption.vue";
 		<NavBarOption title="TEAM" :isActive=false />
 		<NavBarOption title="DIPARTIMENTI" :isActive=false />
 		<NavBarOption title="GALLERIA" :isActive=false />
-		<NavBarOption title="LOG IN" :isActive=false />
+		<NavBarOption title="LOG IN" :isActive=false :isRightAligned=true />
 	</div>
 
 </template>
