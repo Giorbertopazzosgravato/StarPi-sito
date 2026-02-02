@@ -1,6 +1,8 @@
 <script setup>
 import NewsCard from "@/components/home_page/NewsLetter/NewsCard.vue";
+import {ref} from "vue";
 
+const newsContainer = ref(null);
 const news = [
 	{
 		image: "/car.gif",
@@ -18,15 +20,32 @@ const news = [
 
 	}
 ]
+
+function scrollLeft(){
+	if (newsContainer.value){
+		newsContainer.value.scrollBy({
+			left: -300,
+			behavior: "smooth"
+		})
+	}
+}
+function scrollRight(){
+	if (newsContainer.value){
+		newsContainer.value.scrollBy({
+			left: 300,
+			behavior: "smooth"
+		})
+	}
+}
 </script>
 
 <template>
 	<div class="container">
-		<button><</button>
-		<div class="newsContainer">
+		<button @click="scrollLeft">&lt;</button>
+		<div class="newsContainer" ref="newsContainer">
 			<NewsCard v-for="card in news" :key = "card.title" :image = card.image :title=card.title class="newsCard"/>
 		</div>
-		<button>></button>
+		<button @click="scrollRight">&gt;</button>
 	</div>
 </template>
 
@@ -52,5 +71,9 @@ const news = [
 
 .newsCard{
 
+}
+button{
+	flex-shrink: 0;
+	flex-grow: 0;
 }
 </style>
