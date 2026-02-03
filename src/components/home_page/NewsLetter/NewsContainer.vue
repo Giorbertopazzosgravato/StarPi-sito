@@ -41,17 +41,19 @@ function scrollRight(){
 
 <template>
 	<div class="container">
-		<button @click="scrollLeft">&lt;</button>
+		<button @click="scrollLeft" class="left">&lt;</button>
 		<div class="newsContainer" ref="newsContainer">
 			<NewsCard v-for="card in news" :key = "card.title" :image = card.image :title=card.title class="newsCard"/>
 		</div>
-		<button @click="scrollRight">&gt;</button>
+		<button @click="scrollRight" class="right">&gt;</button>
 	</div>
 </template>
 
 <style scoped>
 .container{
-	display: flex;
+	position: relative;
+	max-width: fit-content;
+	max-height: fit-content;
 }
 .newsContainer{
 	display: flex;
@@ -62,6 +64,22 @@ function scrollRight(){
 	border-radius: 40px;
 	padding: 2%;
 }
+button{
+	position: absolute;
+	/* width ; height */
+	width: 2vw;
+	height: 30vh;
+}
+.left{
+	top: 50%;
+	transform: translate(-100%, -50%);
+}
+.right{
+	right: 0;
+	top: 50%;
+	transform: translate(100%, -50%);
+}
+
 .newsContainer::-webkit-scrollbar{width: 10px; height: 50% }
 .newsContainer::-webkit-scrollbar-button{ display: none; }
 .newsContainer::-webkit-scrollbar-track{ display: none; }
