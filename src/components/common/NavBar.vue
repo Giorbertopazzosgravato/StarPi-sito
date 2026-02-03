@@ -5,12 +5,12 @@ import NavBarOption from "@/components/common/NavBarOption.vue";
 
 <template>
 	<div>
-		<NavBarOption title="HOME" :isActive=true />
-		<NavBarOption title="NEWS" :isActive=false />
-		<NavBarOption title="PROGETTI" :isActive=false />
-		<NavBarOption title="TEAM" :isActive=false />
-		<NavBarOption title="DIPARTIMENTI" :isActive=false />
-		<NavBarOption title="GALLERIA" :isActive=false />
+		<RouterLink to="https://www.google.com"><NavBarOption title="HOME" :isActive=true /></RouterLink>
+		<RouterLink to="https://www.google.com"><NavBarOption title="NEWS" :isActive=false /></RouterLink>
+		<RouterLink to="https://www.google.com"><NavBarOption title="PROGETTI" :isActive=false /></RouterLink>
+		<RouterLink to="https://www.google.com"><NavBarOption title="TEAM" :isActive=false /></RouterLink>
+		<RouterLink to="https://www.google.com"><NavBarOption title="DIPARTIMENTI" :isActive=false /></RouterLink>
+		<RouterLink to="https://www.google.com"><NavBarOption title="GALLERIA" :isActive=false /></RouterLink>
 	</div>
 
 </template>
