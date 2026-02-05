@@ -4,7 +4,7 @@ import NavBarOption from "@/components/common/NavBarOption.vue";
 </script>
 
 <template>
-	<div>
+	<div class="navBarContainer">
 		<RouterLink to="https://www.google.com"><NavBarOption title="HOME" :isActive=true /></RouterLink>
 		<RouterLink to="https://www.google.com"><NavBarOption title="NEWS" :isActive=false /></RouterLink>
 		<RouterLink to="https://www.google.com"><NavBarOption title="PROGETTI" :isActive=false /></RouterLink>
@@ -16,12 +16,13 @@ import NavBarOption from "@/components/common/NavBarOption.vue";
 </template>
 
 <style scoped>
-	div{
-		position: sticky;
+	.navBarContainer{
+		position: fixed;
 		top: 0;
 		display: flex;
 		background-color: #213152;
 		height: max-content;
-		z-index: 9999;
+		width: 100%;
+		z-index: 99999;
 	}
 </style>

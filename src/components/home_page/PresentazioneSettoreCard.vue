@@ -3,7 +3,7 @@
 </script>
 
 <template>
-	<div class="container">
+	<div class="presentazioneSettoreContainer">
 		<div class="image_container">
 			<slot name="image">
 				<img src="/car.gif" alt="nessuna immagine passata">
@@ -18,7 +18,7 @@
 </template>
 
 <style scoped>
-	.container{
+	.presentazioneSettoreContainer{
 		left: 10%;
 		background-color: #29446E;
 		border-radius: 24px;

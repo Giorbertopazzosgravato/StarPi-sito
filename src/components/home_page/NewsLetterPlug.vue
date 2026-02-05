@@ -5,18 +5,18 @@ import IscrizioneNewsLetter from "@/components/home_page/NewsLetter/IscrizioneNe
 </script>
 
 <template>
-	<div class="container">
+	<div class="newsPlugContainer">
 		<div class="NewsContainer">
 			<h1>LE ULTIME NEWS</h1>
 			<NewsContainer />
 		</div>
-		<hr style="margin-top: 5%;">
+		<hr style="margin-top: 5%; margin-bottom: 8%">
 		<IscrizioneNewsLetter/>
 	</div>
 </template>
 
 <style scoped>
-.container{
+.newsPlugContainer{
 	background-color: #29446E;
 	margin-left: auto;
 	margin-right: auto;
