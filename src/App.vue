@@ -1,33 +1,19 @@
 <script setup>
 import NavBar from "@/components/common/NavBar.vue";
-import ImageAndSlogan from "@/components/home_page/ImageAndSlogan.vue";
-import Obiettivo from "@/components/home_page/Obiettivo.vue";
-import Gradiente_Homepage from "@/assets/home_page/Gradiente_Homepage.vue";
-import ComeCollaboriamo from "@/components/home_page/ComeCollaboriamo.vue";
-import NewsLetterPlug from "@/components/home_page/NewsLetterPlug.vue";
+
+import NewsPage from "@/components/news_page/NewsPage.vue";
+import HomePage from "@/components/home_page/HomePage.vue";
+import {reactive} from "vue";
+import {createMemoryHistory, createRouter} from "vue-router";
+
+
 </script>
 
 <template>
-	<Gradiente_Homepage/>
 	<NavBar/>
-	<ImageAndSlogan/>
-	<Obiettivo/>
-	<ComeCollaboriamo/>
-	<hr style="width: 80vw; margin-top: 10vh;">
-	<NewsLetterPlug/>
 
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
+	<RouterView/>
+
 </template>
 
 <style scoped>
