@@ -6,9 +6,9 @@
 	<div class="IscrizioneContainer">
 		<div class="TitoloContainer">
 			<div class="FirstRow">
-				<img src="../../assets/news_page/critical signal.png" alt="critical"/>
+				<img src="./assets/critical%20signal.png" alt="critical"/>
 				<h1 class="messaggioCritico">MESSAGGIO CRITICO PER L'UTENTE</h1>
-				<img src="../../assets/news_page/critical signal.png" alt="critical"/>
+				<img src="./assets/critical%20signal.png" alt="critical"/>
 			</div>
 			<h2 class="habemusNewsletter">Abbiamo una newsletter! Cosa aspetti ad iscriverti?</h2>
 		</div>
@@ -37,6 +37,8 @@
 
 <style scoped>
 .IscrizioneContainer{
+
+	margin-bottom: 5%;
 	width: 80vw;
 	height: 45vh;
 	padding-bottom: 2%;
