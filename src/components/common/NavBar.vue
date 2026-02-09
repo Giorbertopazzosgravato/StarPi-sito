@@ -1,16 +1,41 @@
 <script setup>
 
 import NavBarOption from "@/components/common/NavBarOption.vue";
+import {ref} from "vue";
+let active_pages = ref([true, false, false, false, false, false]);
+
+function activate_other_page(index){
+	console.log(index)
+	// non ho voglia di scrivere del buon codice
+	for (const option of navBarOptions.value){
+		option.isActive = false;
+	}
+	navBarOptions.value[index].isActive = true;
+}
+function navBarOption(title, link, isActive){
+	return {
+		title,
+		link,
+		isActive
+	}
+}
+const navBarOptions = ref([
+		new navBarOption("HOME", "/home", true),
+		new navBarOption("NEWS", "/news", false),
+		new navBarOption("PROGETTI", "/", false),
+		new navBarOption("TEAM", "/team", false),
+		new navBarOption("DIPARTIMENTI", "/", false),
+		new navBarOption("GALLERIA", "/", false),
+	])
 </script>
 
 <template>
 	<div class="NavBarWrapper">
-		<RouterLink to="/home"><NavBarOption title="HOME" :isActive=true /></RouterLink>
-		<RouterLink to="/news"><NavBarOption title="NEWS" :isActive=false /></RouterLink>
-		<RouterLink to=""><NavBarOption title="PROGETTI" :isActive=false /></RouterLink>
-		<RouterLink to="/team"><NavBarOption title="TEAM" :isActive=false /></RouterLink>
-		<RouterLink to="https://www.google.com"><NavBarOption title="DIPARTIMENTI" :isActive=false /></RouterLink>
-		<RouterLink to="https://www.google.com"><NavBarOption title="GALLERIA" :isActive=false /></RouterLink>
+		<div v-for="(option, index) in navBarOptions" :key="option.title">
+			<RouterLink :to="option.link">
+				<NavBarOption :title = option.title :isActive=option.isActive @click="activate_other_page(index)"/>
+			</RouterLink>
+		</div>
 	</div>
 
 </template>
