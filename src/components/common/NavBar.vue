@@ -2,7 +2,6 @@
 
 import NavBarOption from "@/components/common/NavBarOption.vue";
 import {ref} from "vue";
-let active_pages = ref([true, false, false, false, false, false]);
 
 function activate_other_page(index){
 	console.log(index)
@@ -22,7 +21,7 @@ function navBarOption(title, link, isActive){
 const navBarOptions = ref([
 		new navBarOption("HOME", "/home", true),
 		new navBarOption("NEWS", "/news", false),
-		new navBarOption("PROGETTI", "/", false),
+		new navBarOption("PROGETTI", "/progetti", false),
 		new navBarOption("TEAM", "/team", false),
 		new navBarOption("DIPARTIMENTI", "/", false),
 		new navBarOption("GALLERIA", "/", false),
