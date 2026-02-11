@@ -39,6 +39,10 @@ defineProps({
 	margin-left: 5vw;
 	margin-bottom: 5vh;
 }
+.capoContainer img{
+	max-height: 40vh;
+	max-width: 40vw;
+}
 .capoTxtContainer{
 	color: white;
 	margin-left: 5vw;
@@ -49,5 +53,6 @@ defineProps({
 }
 .capoTxtContainer p{
 	font-size: 1.5em;
+	max-width: 40rem;
 }
 </style>

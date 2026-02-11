@@ -11,9 +11,9 @@ function createNews(titolo, descrizione, imageURL){
 	}
 }
 const news = [
-	new createNews("ciao", "ciao, sono giacomo, questa e' una news!", "./assets/sukuna.png"),
-	new createNews("ciao anita", "wow, ma c'e' anche la mia fidanzata bellissima qua", "./assets/gojo_one_tooth.webp"),
-	new createNews("addio", "boh, mi sono rotto il cazzo porcoddio", "./assets/todo.jpeg"),
+	new createNews("ciao", "ciao, sono giacomo, questa e' una news!", "./team_page/sukuna.png"),
+	new createNews("ciao anita", "wow, ma c'e' anche la mia fidanzata bellissima qua", "./team_page/gojo_one_tooth.webp"),
+	new createNews("addio", "boh, mi sono rotto il cazzo porcoddio", "./team_page/todo.jpeg"),
 	{}
 ]
 </script>
