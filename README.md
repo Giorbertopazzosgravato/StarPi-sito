@@ -2,6 +2,9 @@
 Questo e' il nuovo mitico sito di StarPi
 
 ## Project Setup
+``` bash
+git clone https://github.com/Giorbertopazzosgravato/StarPi-sito
+```
 
 ```sh
 npm install
