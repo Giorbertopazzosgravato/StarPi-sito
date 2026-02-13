@@ -13,32 +13,32 @@ const cards = reactive([
 	{
 		title: "FLIGHT DYNAMICS",
 		descrizione: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-		image_src: new URL("../../assets/home_page/flight-dynamics-icon.png", import.meta.url).href,
+		image_src: new URL("/home_page/flight-dynamics-icon.png", import.meta.url).href,
 	},
 	{
 		title: "AVIONICS",
 		descrizione: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-		image_src: new URL("../../assets/home_page/avionics-icon.png", import.meta.url).href,
+		image_src: new URL("/home_page/avionics-icon.png", import.meta.url).href,
 	},
 	{
 		title: "PAYLOAD",
 		descrizione: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-		image_src: new URL("../../assets/home_page/payload-icon.png", import.meta.url).href,
+		image_src: new URL("/home_page/payload-icon.png", import.meta.url).href,
 	},
 	{
 		title: "RECOVERY SYSTEM",
 		descrizione: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-		image_src: new URL("../../assets/home_page/recovery-system-icon.png", import.meta.url).href,
+		image_src: new URL("/home_page/recovery-system-icon.png", import.meta.url).href,
 	},
 	{
 		title: "PROPULSION",
 		descrizione: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-		image_src: new URL("../../assets/home_page/propulsion-icon.png", import.meta.url).href,
+		image_src: new URL("/home_page/propulsion-icon.png", import.meta.url).href,
 	},
 	{
 		title: "LOGISTICS & MARKETING",
 		descrizione: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-		image_src: new URL("../../assets/home_page/logistics-icon.png", import.meta.url).href,
+		image_src: new URL("/home_page/logistics-icon.png", import.meta.url).href,
 	},
 ]);
 

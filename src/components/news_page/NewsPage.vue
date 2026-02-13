@@ -11,11 +11,12 @@ function createNews(titolo, descrizione, imageURL){
 	}
 }
 const news = [
-	new createNews("ciao", "ciao, sono giacomo, questa e' una news!", "./team_page/sukuna.png"),
-	new createNews("ciao anita", "wow, ma c'e' anche la mia fidanzata bellissima qua", "./team_page/gojo_one_tooth.webp"),
-	new createNews("addio", "boh, mi sono rotto il cazzo porcoddio", "./team_page/todo.jpeg"),
+	new createNews("ciao", "ciao, sono giacomo, questa e' una news!", "/news_page/sukuna.png"),
+	new createNews("ciao anita", "wow, ma c'e' anche la mia fidanzata bellissima qua", "/news_page/gojo_one_tooth.webp"),
+	new createNews("addio", "boh, mi sono rotto il cazzo porcoddio", "/news_page/todo.jpeg"),
 	{}
 ]
+
 </script>
 
 <template>
@@ -23,7 +24,7 @@ const news = [
 	#29446E 0%,
 	#152845 50%
 	) ">
-		<img src="./assets/background_logo%20news%20page.png" alt="logo" class="logoNewsLetter">
+		<img src="/news_page/background_logo%20news%20page.png" alt="logo" class="logoNewsLetter">
 		<hr style="width: 90%; margin-top: 10vh; margin-bottom: 10vh">
 		<div v-for="i in Array(news.length + 1).keys()">
 			<displayer>

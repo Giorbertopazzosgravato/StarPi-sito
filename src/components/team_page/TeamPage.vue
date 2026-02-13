@@ -11,12 +11,11 @@ function createPersona(nome, linkedin_link, imgURL){
 		nome, linkedin_link, imgURL
 	}
 }
-
 </script>
 
 <template>
 	<div class="TeamsImageContainer">
-		<img src="../../assets/team_page/teams_background.png" height="auto" width="100%" alt="bgimage"/>
+		<img src="/team_page/teams_background.png" width="100%" alt="bgimage"/>
 	</div>
 	<AnnataWrapper anno="2025">
 		<TeamSubsection
@@ -32,7 +31,7 @@ function createPersona(nome, linkedin_link, imgURL){
 			new createPersona('Giacomo Consani', '', '/car.gif'),
 			new createPersona('Adnaan Juma', '', '/download.jpg'),
 			new createPersona('Riccardo Necrofilo', '', '/big_raga.webp'),
-			new createPersona('Avni Jashari', '', '/../src/assets/home_page/placeholder.png'),
+			new createPersona('Avni Jashari', '', '/home_page/placeholder.png'),
 			new createPersona(),
 		]"
 		/>
@@ -45,13 +44,13 @@ function createPersona(nome, linkedin_link, imgURL){
 			'Alessandro Bonari',
 			'amo i froci e i cazzi mlml',
 			'https://pornhub.com/',
-			'/../src/assets/team_page/alessandro.png'
+			'/team_page/alessandro.png'
 			)"
 			:persone="[
 			new createPersona('Giacomo Consani', '', '/car.gif'),
 			new createPersona('Adnaan Juma', '', '/download.jpg'),
 			new createPersona('Riccardo Necrofilo', '', '/big_raga.webp'),
-			new createPersona('Avni Jashari', '', '/../src/assets/home_page/placeholder.png'),
+			new createPersona('Avni Jashari', '', '/home_page/placeholder.png'),
 			new createPersona(),
 		]"
 		/>
@@ -62,13 +61,13 @@ function createPersona(nome, linkedin_link, imgURL){
 			'Riccardo Frociazzo',
 			'mi sono dimenticato di nuovo il cognome, viva i processori pipeline, Marco danelutto mi fa una sega a 4 mani',
 			'https://pornhub.com/',
-			'/../src/assets/team_page/epstein.webp'
+			'/team_page/epstein.webp'
 			)"
 			:persone="[
 			new createPersona('Giacomo Consani', '', '/car.gif'),
 			new createPersona('Adnaan Juma', '', '/download.jpg'),
-			new createPersona('Vincenzo Gervasi', '', '/../src/assets/team_page/VincenzoGervasi.jpg'),
-			new createPersona('Avni Jashari', '', '/../src/assets/home_page/placeholder.png'),
+			new createPersona('Vincenzo Gervasi', '', '/team_page/VincenzoGervasi.jpg'),
+			new createPersona('Avni Jashari', '', '/home_page/placeholder.png'),
 			new createPersona(),
 		]"
 		/>
