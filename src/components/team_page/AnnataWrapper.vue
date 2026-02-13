@@ -28,7 +28,7 @@ function changeContent(){
 
 <style scoped>
 .annataContainer{
-	width: 100vw;
+	width: 100%;
 	background-color: #0E0727;
 	color: #FF6200;
 	text-align: center;

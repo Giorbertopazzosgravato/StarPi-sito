@@ -80,7 +80,7 @@ function createPersona(nome, linkedin_link, imgURL){
 .TeamsImageContainer{
 	display: flex;
 	justify-content: center;
-	max-width: 100vw;
+	max-width: 100%;
 	overflow: hidden;
 }
 </style>
