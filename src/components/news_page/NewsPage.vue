@@ -20,7 +20,7 @@ const news = [
 </script>
 
 <template>
-	<div style="background: linear-gradient(
+  <div style="background: linear-gradient(
 	#29446E 0%,
 	#152845 50%
 	) ">

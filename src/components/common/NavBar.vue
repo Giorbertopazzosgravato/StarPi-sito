@@ -21,7 +21,7 @@ function navBarOption(title, link, isActive){
 const navBarOptions = ref([
 		new navBarOption("HOME", "/home", true),
 		new navBarOption("NEWS", "/news", false),
-		new navBarOption("PROGETTI", "/progetti", false),
+		new navBarOption("PROGETTI", "/rogetti", false),
 		new navBarOption("TEAM", "/team", false),
 		new navBarOption("DIPARTIMENTI", "/", false),
 		new navBarOption("GALLERIA", "/", false),
@@ -31,7 +31,7 @@ const navBarOptions = ref([
 <template>
 	<div class="NavBarWrapper">
 		<div v-for="(option, index) in navBarOptions" :key="option.title">
-			<RouterLink :to="option.link">
+			<RouterLink :to="{ path:option.link }">
 				<NavBarOption :title = option.title :isActive=option.isActive @click="activate_other_page(index)"/>
 			</RouterLink>
 		</div>
