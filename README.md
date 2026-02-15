@@ -29,7 +29,7 @@ scalabile)<br>
 [ ] Implementare un database accedibile su rust<br>
 
 ### Frontend
-[ ] Ristudiare i router su Vue (routes con '/#/', le pagine devono aprirsi
+[X] Ristudiare i router su Vue (routes con '/#/', le pagine devono aprirsi
 bene) { Riccardo }<br>
 [ ] Rifare pagina progetti<br>
 [ ] Fare pagina Dipartimenti<br>
