@@ -23,8 +23,7 @@ npm run build
 # Sito StarPi todo:
 
 ### Backend { Giacomo }
-- [ ] Studiare Actix (per capire come mandare le immagini e rendere il sito
-scalabile)<br>
+- [ ] Studiare Actix (per capire come mandare le immagini e rendere il sito scalabile)<br>
 - [ ] Studiare sql su rust<br>
 - [ ] Implementare un database accedibile su rust<br>
 
@@ -34,5 +33,4 @@ bene) { Riccardo }<br>
 - [ ] Rifare pagina progetti<br>
 - [ ] Fare pagina Dipartimenti<br>
 - [ ] Fare pagina Galleria<br>
-- [ ] Rifare lo stile sulle pagine, di modo che siano ben visibili su ogni
-schermo
+- [ ] Rifare lo stile sulle pagine, di modo che siano ben visibili su ogni schermo { Mattia }
