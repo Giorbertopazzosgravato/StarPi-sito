@@ -20,7 +20,7 @@ const router = createRouter({
     routes,
 
 
-    scrollBehavior(to, from, savedPosition) {
+    scrollBehavior() {
         return { top: 0 }
     }
 })
