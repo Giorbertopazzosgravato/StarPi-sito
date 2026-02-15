@@ -21,7 +21,7 @@ function navBarOption(title, link, isActive){
 const navBarOptions = ref([
 		new navBarOption("HOME", "/home", true),
 		new navBarOption("NEWS", "/news", false),
-		new navBarOption("PROGETTI", "/rogetti", false),
+		new navBarOption("PROGETTI", "/progetti", false),
 		new navBarOption("TEAM", "/team", false),
 		new navBarOption("DIPARTIMENTI", "/", false),
 		new navBarOption("GALLERIA", "/", false),
