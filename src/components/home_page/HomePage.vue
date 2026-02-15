@@ -14,19 +14,6 @@ import Gradiente_Homepage from "@/assets/home_page/Gradiente_Homepage.vue";
 	<ComeCollaboriamo/>
 	<hr style="width: 80vw; margin-top: 10vh;">
 	<NewsLetterPlug/>
-
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
 </template>
 
 <style scoped>

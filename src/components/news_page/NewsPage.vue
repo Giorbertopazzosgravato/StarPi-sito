@@ -16,11 +16,10 @@ const news = [
 	new createNews("addio", "boh, mi sono rotto il cazzo porcoddio", "/news_page/todo.jpeg"),
 	{}
 ]
-
 </script>
 
 <template>
-  <div style="background: linear-gradient(
+	<div style="background: linear-gradient(
 	#29446E 0%,
 	#152845 50%
 	) ">
@@ -73,6 +72,6 @@ const news = [
 
 <style scoped>
 	.logoNewsLetter{
-		max-width: 100%;
+		max-width: 100vw;
 	}
 </style>
