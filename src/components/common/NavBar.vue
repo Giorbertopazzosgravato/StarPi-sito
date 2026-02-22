@@ -2,6 +2,7 @@
 
 import NavBarOption from "@/components/common/NavBarOption.vue";
 import {ref} from "vue";
+import {useRoute, useRouter} from "vue-router";
 
 function activate_other_page(index){
 	console.log(index)
@@ -19,21 +20,41 @@ function navBarOption(title, link, isActive){
 	}
 }
 const navBarOptions = ref([
-		new navBarOption("HOME", "/home", true),
+		new navBarOption("HOME", "/home", false),
 		new navBarOption("NEWS", "/news", false),
 		new navBarOption("PROGETTI", "/progetti", false),
 		new navBarOption("TEAM", "/team", false),
 		new navBarOption("DIPARTIMENTI", "/", false),
 		new navBarOption("GALLERIA", "/", false),
 	])
+
+
+function  navBarInt() {
+  const R = useRoute();
+  if(R === undefined){
+    navBarOption.value[0].isActive = true;
+    console.log("R invalidante");
+    return;
+  }
+  for (const option of navBarOptions.value){
+    if(option.link === R.path) {
+      option.isActive = true;
+    }
+  }
+}
+
+navBarInt();
+
 </script>
 
 <template>
 	<div class="NavBarWrapper">
 		<div v-for="(option, index) in navBarOptions" :key="option.title">
-			<RouterLink :to="{ path:option.link }">
-				<NavBarOption :title = option.title :isActive=option.isActive @click="activate_other_page(index)"/>
-			</RouterLink>
+      <div v-if="(option.link) !== '/'">
+			  <RouterLink :to="{ path:option.link }">
+				  <NavBarOption :title = option.title :isActive=option.isActive @click="activate_other_page(index)"/>
+			  </RouterLink>
+      </div>
 		</div>
 	</div>
 

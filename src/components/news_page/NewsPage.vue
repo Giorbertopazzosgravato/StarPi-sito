@@ -3,6 +3,8 @@
 import NewsCard from "@/components/news_page/NewsCard.vue";
 import IscrizioneNewsLetter from "@/components/news_page/IscrizioneNewsLetter.vue";
 import Displayer from "@/components/news_page/displayer.vue";
+
+
 function createNews(titolo, descrizione, imageURL){
 	return {
 		titolo,
@@ -27,17 +29,17 @@ const news = [
 		<hr style="width: 90%; margin-top: 10vh; margin-bottom: 10vh">
 		<div v-for="i in Array(news.length + 1).keys()">
 			<displayer>
-				<div v-if="i === 2" style="background: linear-gradient(#152845 0%, #29446E 50%, #152845 100%)">
-					<IscrizioneNewsLetter />
-				</div>
+          <div v-if="i === 2" style="background: linear-gradient(#152845 0%, #29446E 50%, #152845 100%)">
+            <IscrizioneNewsLetter />
+          </div>
 
-				<NewsCard
-					v-else
-					:titolo="news[i < 2 ? i : i - 1].titolo"
-					:descrizione="news[i < 2 ? i : i - 1].descrizione"
-					:imageURL="news[i < 2 ? i : i - 1].imageURL"
-					:image_goes_left="(i < 2 ? i : i - 1) % 2 === 0"
-				/>
+          <NewsCard
+            v-else
+            :titolo="news[i < 2 ? i : i - 1].titolo"
+            :descrizione="news[i < 2 ? i : i - 1].descrizione"
+            :imageURL="news[i < 2 ? i : i - 1].imageURL"
+            :image_goes_left="(i < 2 ? i : i - 1) % 2 === 0"
+          />
 			</displayer>
 		</div>
 	</div>

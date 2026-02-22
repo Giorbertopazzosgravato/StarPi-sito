@@ -41,7 +41,7 @@
 	margin-bottom: 5%;
 	width: 80vw;
 	height: 45vh;
-	padding-bottom: 2%;
+	padding-bottom: 10%;
 	min-height: fit-content;
 	background-color: rgba(5, 9, 15, 0.5);
 	border-radius: 24px;

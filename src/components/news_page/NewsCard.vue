@@ -20,6 +20,9 @@ defineProps({
 </script>
 
 <template>
+
+
+
 	<div class="newsContainer">
 		<img class="immagine" :class="{imgLeft: image_goes_left, imgRight: !image_goes_left}" :style="{display: (image_goes_left)?'': 'none'}" :src="imageURL" alt="immagine">
 		<div class="textContainer" :class="{txtLeft: !image_goes_left, txtRight: image_goes_left}">
@@ -31,6 +34,10 @@ defineProps({
 </template>
 
 <style scoped>
+
+
+
+
 	.newsContainer{
 		margin-bottom: 5%;
 		display: flex;
@@ -44,6 +51,7 @@ defineProps({
 		margin-right: auto;
 		color: white;
 		overflow: hidden;
+
 	}
 	.newsContainer:hover{
 		border: solid 2px #E16038;

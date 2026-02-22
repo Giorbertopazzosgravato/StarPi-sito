@@ -30,6 +30,7 @@ npm run build
 ### Frontend
 - [X] Ristudiare i router su Vue (routes con '/#/', le pagine devono aprirsi
 bene) { Riccardo }<br>
+- [X] Le pagine si ricaricano bene
 - [ ] fare news che quando si caricano sulla pagina girano [vedere sohcahtoa] (https://thirdspacelearning.com/gcse-maths/geometry-and-measure/sohcahtoa/)
 - [ ] Rifare pagina progetti<br>
 - [ ] Fare pagina Dipartimenti<br>

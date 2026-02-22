@@ -1,26 +1,33 @@
 import { createApp } from 'vue'
 import App from './App.vue'
 import "./components/common/base.css"
-import {createMemoryHistory, createRouter} from "vue-router";
-import HomePage from "@/components/home_page/HomePage.vue";
-import NewsPage from "@/components/news_page/NewsPage.vue";
-import TeamPage from "@/components/team_page/TeamPage.vue";
+import {createWebHistory, createRouter} from "vue-router";
+import HomePage     from "@/components/home_page/HomePage.vue";
+import NewsPage     from "@/components/news_page/NewsPage.vue";
+import TeamPage     from "@/components/team_page/TeamPage.vue";
 import ProgettiPage from "@/components/progetti_page/ProgettiPage.vue";
+import NotFound     from "@/components/NotFound/NotFound.vue";
 
 const routes = [
-    {path: "/", component: HomePage},
-    {path: "/home", component: HomePage},
-    {path: "/news", component: NewsPage},
-    {path: "/team", component: TeamPage},
-    {path: "/progetti", component: ProgettiPage},
-
+    {path: "/",         redirect:  "/home"      },
+    {path: "/home",     component: HomePage     },
+    {path: "/news",     component: NewsPage     },
+    {path: "/team",     component: TeamPage     },
+    {path: "/progetti", component: ProgettiPage },
+    { path: '/:pathMatch(.*)', component: NotFound }
 ]
+
 const router = createRouter({
-    history: createMemoryHistory(),
+    history: createWebHistory(),
     routes,
     scrollBehavior() {
         return { top: 0 }
     }
 })
 
-createApp(App).use(router).mount('#app')
+//   createApp(App).use(router).mount('#app')   <-- probblemi di sicronizzazione , pagina inizia il render prima che router sia pronto
+
+const M = createApp(App).use(router)
+router.isReady().then(() => {
+    M.mount('#app')
+})
