@@ -1,4 +1,14 @@
-<link rel="stylesheet" href="https://fontshttps://fonts.googleapis.com/css2?family=Inter" />
+<script setup>
+function getSponsorLogos() {
+  // TODO: Fetch sponsor logos from backend API
+  return [];
+}
+</script>
+
+<link
+  rel="stylesheet"
+  href="https://fontshttps://fonts.googleapis.com/css2?family=Inter"
+/>
 
 <template>
   <div class="footer">
@@ -8,7 +18,7 @@
         <h2 class="sponsor-headline">I NOSTRI SPONSOR</h2>
       </div>
       <div class="sponsor-logos">
-        <img src="../../../assets/images/logo-dewesoft.jpg" alt="Dewesoft Logo" />
+        <img v-for="logo in getSponsorLogos()" :src="logo" />
       </div>
     </div>
   </div>
@@ -20,7 +30,7 @@ div {
 }
 
 h2 {
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
 }
 
 .footer {
@@ -34,7 +44,7 @@ h2 {
 }
 
 .sponsor-headline {
-  color: #B2B2B2;
+  color: #b2b2b2;
   text-align: center;
 }
 </style>
