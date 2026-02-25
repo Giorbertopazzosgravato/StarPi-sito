@@ -74,6 +74,6 @@ const news = [
 
 <style scoped>
 	.logoNewsLetter{
-		max-width: 100vw;
+		max-width: 100%;
 	}
 </style>
