@@ -30,6 +30,10 @@ const sponsors = [
     src: "../../../static-assets/images/logo-euroavia.svg",
     alt: "Logo Euroavia",
   },
+  {
+    src: "../../../static-assets/images/logo-bluetti.png",
+    alt: "Logo Bluetti",
+  },
 ];
 </script>
 
@@ -88,5 +92,10 @@ h2 {
   justify-content: center;
   /*TODO: Idem */
   gap: 120px 100px;
+}
+
+.sponsor-logos img {
+  max-height: 6em;
+  object-fit: contain;
 }
 </style>
