@@ -95,7 +95,7 @@ h2 {
 }
 
 .sponsor-logos img {
-  max-height: 6em;
+  max-height: 150px;
   object-fit: contain;
 }
 </style>
