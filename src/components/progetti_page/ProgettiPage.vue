@@ -1,4 +1,5 @@
 <script setup>
+import { TresCanvas } from '@tresjs/core'
 
 </script>
 
@@ -12,16 +13,26 @@
 	<p>(non abbiamo progetti da farvi vedere, ci stiamo lavorando)</p>
 
 
-  <button type="button"
-          onclick="document.getElementById('demo').innerHTML = Date()">
-    Click me to display Date and Time.</button>
+  <TresCanvas>
+    <TresPerspectiveCamera />
+     <TresMesh :position="[0, 0, 0]">
+        <TresBoxGeometry/>
+        <TresMeshNormalMaterial />
+     </TresMesh>
+     <TresAxesHelper/>
+
+  </TresCanvas>
 
   <p id="demo"></p>
-
 </template>
 
 
 
 <style scoped>
-
+ html, body, #app {
+   height: 100%;
+   margin: 0;
+   padding: 0;
+   width: 100%;
+ }
 </style>

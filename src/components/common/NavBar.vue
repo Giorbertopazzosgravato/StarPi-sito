@@ -26,6 +26,7 @@ const navBarOptions = ref([
 		new navBarOption("TEAM", "/team", false),
 		new navBarOption("DIPARTIMENTI", "/", false),
 		new navBarOption("GALLERIA", "/", false),
+    new navBarOption("Accedi", "/login", false),
 	])
 
 

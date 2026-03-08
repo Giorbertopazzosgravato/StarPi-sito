@@ -7,14 +7,16 @@ import NewsPage     from "@/components/news_page/NewsPage.vue";
 import TeamPage     from "@/components/team_page/TeamPage.vue";
 import ProgettiPage from "@/components/progetti_page/ProgettiPage.vue";
 import NotFound     from "@/components/NotFound/NotFound.vue";
+import Utenza       from "@/components/Utenza/LogIn.vue";
 
 const routes = [
-    {path: "/",         redirect:  "/home"      },
-    {path: "/home",     component: HomePage     },
-    {path: "/news",     component: NewsPage     },
-    {path: "/team",     component: TeamPage     },
-    {path: "/progetti", component: ProgettiPage },
-    { path: '/:pathMatch(.*)', component: NotFound }
+    {path: "/",                redirect:  "/home"      },
+    {path: "/home",            component: HomePage     },
+    {path: "/news",            component: NewsPage     },
+    {path: "/team",            component: TeamPage     },
+    {path: "/progetti",        component: ProgettiPage },
+    {path: "/login",           component: Utenza       },
+    { path: '/:pathMatch(.*)', component: NotFound     }
 ]
 
 const router = createRouter({
