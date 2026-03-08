@@ -31,7 +31,7 @@ const sponsors = [
     alt: "Logo Euroavia",
   },
   {
-    src: "../../../static-assets/images/logo-bluetti.png",
+    src: "../../../static-assets/images/logo-bluetti-cropped.png",
     alt: "Logo Bluetti",
   },
 ];
