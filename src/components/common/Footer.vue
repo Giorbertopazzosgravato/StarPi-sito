@@ -46,9 +46,7 @@ const sponsors = [
   <div class="footer">
     <!-- Sponsors -->
     <div>
-      <div class="sponsor-headline-wrapper">
-        <h2 class="sponsor-headline">I NOSTRI SPONSOR</h2>
-      </div>
+      <h2 class="sponsor-headline">I NOSTRI SPONSOR</h2>
       <div class="sponsor-logos">
         <SponsorLogo
           v-for="sponsor in sponsors"
@@ -56,6 +54,9 @@ const sponsors = [
           :alt="sponsor.alt"
         />
       </div>
+    </div>
+    <div class="page-ending">
+      <h3>Interested? Here's our socials:</h3>
     </div>
   </div>
 </template>
@@ -65,8 +66,11 @@ div {
   width: 100%;
 }
 
-h2 {
+h2,
+h3 {
   font-family: "Inter", sans-serif;
+  width: 100%;
+  text-align: center;
 }
 
 .footer {
@@ -75,11 +79,8 @@ h2 {
   align-items: center;
 }
 
-.sponsor-headline-wrapper {
-  background-color: #000000;
-}
-
 .sponsor-headline {
+  background-color: #000000;
   color: #b2b2b2;
   text-align: center;
   /* TODO: forse è meglio relativo */
@@ -97,5 +98,16 @@ h2 {
 .sponsor-logos img {
   max-height: 150px;
   object-fit: contain;
+}
+
+.page-ending {
+  margin-top: 50px;
+  background-color: #000000;
+  text-align: center;
+}
+
+.page-ending h3 {
+  color: #ffffff;
+  font-size: 32px;
 }
 </style>
