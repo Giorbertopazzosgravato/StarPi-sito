@@ -1,5 +1,5 @@
 <script setup>
-import SponsorLogo from "@/components/common/SponsorLogo.vue";
+import Logo from "@/components/common/Logo.vue";
 
 const sponsors = [
   {
@@ -48,7 +48,7 @@ const sponsors = [
     <div>
       <h2 class="sponsor-headline">I NOSTRI SPONSOR</h2>
       <div class="sponsor-logos">
-        <SponsorLogo
+        <Logo
           v-for="sponsor in sponsors"
           :src="sponsor.src"
           :alt="sponsor.alt"
