@@ -35,6 +35,17 @@ const sponsors = [
     alt: "Logo Bluetti",
   },
 ];
+
+const socials = [
+  {
+    src: "../../../static-assets/images/logo-instagram.svg",
+    alt: "Logo Instagram",
+  },
+  {
+    src: "../../../static-assets/images/logo-linkedin.svg",
+    alt: "Logo LinkedIn",
+  },
+];
 </script>
 
 <link
@@ -57,6 +68,9 @@ const sponsors = [
     </div>
     <div class="page-ending">
       <h3>Interested? Here's our socials:</h3>
+      <div class="socials">
+        <Logo v-for="social in socials" :src="social.src" :alt="social.alt" />
+      </div>
     </div>
   </div>
 </template>
@@ -109,5 +123,11 @@ h3 {
 .page-ending h3 {
   color: #ffffff;
   font-size: 32px;
+}
+
+.socials {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
 }
 </style>
