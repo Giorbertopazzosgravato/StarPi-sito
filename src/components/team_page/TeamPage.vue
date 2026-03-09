@@ -54,7 +54,7 @@ function createPersona(nome, linkedin_link, imgURL){
 			new createPersona(),
 		]"
 		/>
-		<TeamSubsection
+		<TeamSubsection id="IT"
 			nome_dipartimento="EPSTEIN COMPETITORS"
 			:capoDipartimento="
 			new createCapoDipartimento(

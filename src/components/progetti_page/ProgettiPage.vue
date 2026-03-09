@@ -1,5 +1,5 @@
 <script setup>
-import { TresCanvas } from '@tresjs/core'
+//import { TresCanvas } from '@tresjs/core'
 
 </script>
 
@@ -12,17 +12,16 @@ import { TresCanvas } from '@tresjs/core'
 	<h1>QUESTA PAGINA E' ANCORA WORK-IN-PROGRESS</h1>
 	<p>(non abbiamo progetti da farvi vedere, ci stiamo lavorando)</p>
 
-
-  <TresCanvas>
-    <TresPerspectiveCamera />
-     <TresMesh :position="[0, 0, 0]">
-        <TresBoxGeometry/>
-        <TresMeshNormalMaterial />
-     </TresMesh>
-     <TresAxesHelper/>
-
-  </TresCanvas>
-
+ <!--
+ // <TresCanvas>
+ //   <TresPerspectiveCamera />
+ //    <TresMesh :position="[0, 0, 0]">
+ //       <TresBoxGeometry/>
+ //       <TresMeshNormalMaterial />
+ //    </TresMesh>
+ //    <TresAxesHelper/>
+ // </TresCanvas>
+            /-->
   <p id="demo"></p>
 </template>
 

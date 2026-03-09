@@ -8,6 +8,7 @@ import TeamPage     from "@/components/team_page/TeamPage.vue";
 import ProgettiPage from "@/components/progetti_page/ProgettiPage.vue";
 import NotFound     from "@/components/NotFound/NotFound.vue";
 import Utenza       from "@/components/Utenza/LogIn.vue";
+import sponsors     from "@/components/sponsor/sponsor.vue";
 
 const routes = [
     {path: "/",                redirect:  "/home"      },
@@ -15,8 +16,10 @@ const routes = [
     {path: "/news",            component: NewsPage     },
     {path: "/team",            component: TeamPage     },
     {path: "/progetti",        component: ProgettiPage },
+    {path: "/sponsor",         component: sponsors     },
+
     {path: "/login",           component: Utenza       },
-    { path: '/:pathMatch(.*)', component: NotFound     }
+    {path: '/:pathMatch(.*)',  component: NotFound     }
 ]
 
 const router = createRouter({

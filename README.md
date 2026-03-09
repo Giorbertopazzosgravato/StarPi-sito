@@ -36,3 +36,13 @@ bene) { Riccardo }<br>
 - [ ] Fare pagina Dipartimenti<br>
 - [ ] Fare pagina Galleria<br>
 - [ ] Rifare lo stile sulle pagine, di modo che siano ben visibili su ogni schermo { Mattia }
+
+### R
+ - [x] pagina sponsor   // +il lo sponsor BLUETTI  
+ - [x] piè di pagina
+ - [x] miglorare pagina 404
+
+
+si rimane in attesa di:
+    info sul materiale per i progetti
+    correzzioni varie
