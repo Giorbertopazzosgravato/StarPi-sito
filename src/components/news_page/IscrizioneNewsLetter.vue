@@ -1,103 +1,81 @@
-<script setup>
-
-</script>
-
 <template>
-	<div class="IscrizioneContainer">
-		<div class="TitoloContainer">
-			<div class="FirstRow">
-				<img src="/news_page/critical%20signal.png" alt="critical"/>
-				<h1 class="messaggioCritico">MESSAGGIO CRITICO PER L'UTENTE</h1>
-				<img src="/news_page/critical%20signal.png" alt="critical"/>
-			</div>
-			<h2 class="habemusNewsletter">Abbiamo una newsletter! Cosa aspetti ad iscriverti?</h2>
-		</div>
-		<form action="" class="form" method="post" >
-			<div>
-				<input type="text" name="nome" id="nome" class="input txt" placeholder="come ti chiami?">
-				<input type="email" name="e-mail" id="email" class="input txt" placeholder="inserisci la tua e-mail!">
-				<button type="submit" class="input btn"><b>ENTRA NEL GROUND CREW</b>
-					<svg
-						xmlns="http://www.w3.org/2000/svg"
-						viewBox="0 0 24 24"
-						width="44"
-						height="44"
-					>
-						<path fill="none" d="M0 0h24v24H0z"></path>
-						<path
-							fill="currentColor"
-							d="M5 13c0-5.088 2.903-9.436 7-11.182C16.097 3.564 19 7.912 19 13c0 .823-.076 1.626-.22 2.403l1.94 1.832a.5.5 0 0 1 .095.603l-2.495 4.575a.5.5 0 0 1-.793.114l-2.234-2.234a1 1 0 0 0-.707-.293H9.414a1 1 0 0 0-.707.293l-2.234 2.234a.5.5 0 0 1-.793-.114l-2.495-4.575a.5.5 0 0 1 .095-.603l1.94-1.832C5.077 14.626 5 13.823 5 13zm1.476 6.696l.817-.817A3 3 0 0 1 9.414 18h5.172a3 3 0 0 1 2.121.879l.817.817.982-1.8-1.1-1.04a2 2 0 0 1-.593-1.82c.124-.664.187-1.345.187-2.036 0-3.87-1.995-7.3-5-8.96C8.995 5.7 7 9.13 7 13c0 .691.063 1.372.187 2.037a2 2 0 0 1-.593 1.82l-1.1 1.039.982 1.8zM12 13a2 2 0 1 1 0-4 2 2 0 0 1 0 4z"
-						></path>
-					</svg>
-				</button>
-			</div>
-		</form>
-	</div>
+  <div class="newsletter-box">
+    <div class="newsletter-header">
+      <div class="alert-row">
+        <img src="/news_page/critical%20signal.png" alt="alert" class="alert-icon" />
+        <h2 class="alert-text">MESSAGGIO CRITICO PER L'UTENTE</h2>
+        <img src="/news_page/critical%20signal.png" alt="alert" class="alert-icon" />
+      </div>
+      <p class="newsletter-sub">Abbiamo una newsletter! Cosa aspetti ad iscriverti?</p>
+    </div>
+
+    <form class="newsletter-form" @submit.prevent>
+      <input type="text" placeholder="Come ti chiami?" class="n-input" />
+      <input type="email" placeholder="Inserisci la tua e-mail!" class="n-input" />
+      <button type="submit" class="n-btn">
+        <b>ENTRA NEL GROUND CREW</b>
+      </button>
+    </form>
+  </div>
 </template>
 
 <style scoped>
-.IscrizioneContainer{
-
-	margin-bottom: 5%;
-	width: 80vw;
-	height: 45vh;
-	padding-bottom: 10%;
-	min-height: fit-content;
-	background-color: rgba(5, 9, 15, 0.5);
-	border-radius: 24px;
-	color: white;
-	margin-left: auto;
-	margin-right: auto;
-
-}
-.TitoloContainer{
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	width: 100%;
-	gap: 5vw;
-}
-.FirstRow{
-	width: 100%;
-	display: flex;
-	justify-content: center;
-}
-img{
-	margin-top: 2vh;
-	height: 15vh;
-	width: auto;
-}
-.messaggioCritico{
-	font-size: 3.5em;
-}
-.habemusNewsletter{
-	font-size: 2.5em;
-	margin-top: -8%
-}
-.input{
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
-	font-size: 1.3em;
-	border-radius: 10px;
-	border: solid #E16038;
-	background-color: #B8B8B8;
-}
-.txt{
-	font-size: 1.7em;
-	width: 80%;
-	height: 5vh;
-	margin-bottom: 2vh;
-}
-.btn{
-	color: white;
-	background-color: rgba(225, 96, 56, 0.32);
-	font-size: 2.5em;
+.newsletter-box {
+  width: 100%; 
+  max-width: none;
+  margin: 0; 
+  padding: 40px 20px;
+  /* Gradiente schiarito: colori base più alti e opacità ridotta */
+  background: linear-gradient(180deg, rgba(23, 182, 210, 0.25) 0%, rgba(12, 64, 135, 0.5) 100%);
+  border-radius: 40px;
+  text-align: center;
+  color: white;
+  box-sizing: border-box;
 }
 
-.form{
-	width: 80%;
-	margin-left: auto;
-	margin-right: auto;
+.alert-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+
+.alert-icon { height: 40px; }
+.alert-text { font-size: 1.5rem; margin: 0; font-weight: bold; }
+.newsletter-sub { font-size: 1.1rem; margin: 20px 0; color: #ddd; }
+
+.newsletter-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.n-input {
+  padding: 15px;
+  border-radius: 12px;
+  border: 2px solid #E16038;
+  background: #B8B8B8;
+  font-size: 1rem;
+}
+
+.n-btn {
+  padding: 15px;
+  background-color: #E16038;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  transition: background 0.3s;
+}
+
+.n-btn:hover { background-color: #DCA74B; }
+
+@media (min-width: 850px) {
+  .newsletter-box { border-radius: 50px; }
+  .alert-icon { height: 60px; }
+  .alert-text { font-size: 2.5rem; }
 }
 </style>
