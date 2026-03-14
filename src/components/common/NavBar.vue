@@ -41,6 +41,7 @@ const navLinks = [
   { title: "Team", link: "/team" },
   { title: "Galleria", link: "/galleria" },
   { title: "Contact us", link: "/contatti" },
+  { title: "Sponsors", link: "/sponsor" }
 ];
 </script>
 
