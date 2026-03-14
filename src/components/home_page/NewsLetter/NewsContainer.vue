@@ -1,9 +1,10 @@
 <script setup>
 import NewsCard from "@/components/home_page/NewsLetter/NewsCard.vue";
-import {ref} from "vue";
+import {onMounted, ref} from "vue";
 
 const newsContainer = ref(null);
-const news = [
+
+const news = ref([
 	{
 		image: "/car.gif",
 		title: "waaaaaaa",
@@ -19,7 +20,28 @@ const news = [
 	{
 
 	}
-]
+]);
+
+async function fetch_news(){
+	try{
+		const response = await fetch("http://localhost:7878/database/please_server_I_need_this_my_news_is_kinda_homeless");
+		if(!response.ok){
+			throw new Error("my news are kinda homeless");
+		}
+		console.log("(=^･ω･^=) <-mao ")
+		const data = await response.json();
+		console.log("data: ", data);
+		news.value = data;
+
+	} catch(e){
+		console.log(e);
+	}
+}
+
+onMounted(()=>{
+	fetch_news();
+})
+
 
 function scrollLeft(){
 	if (newsContainer.value){
