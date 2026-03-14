@@ -1,54 +1,91 @@
-<!--  è quasi la stessa rova della news page così sembra più coerente -->
-<!--  quidni dovrebbe essere più facile da convertire per i rapporti d' immagine diversi-->
-
 <script setup>
+import { ref } from "vue";
+import Inserzione from "@/components/sponsor/InsersioneSponsor.vue";
 
-import NewsCard from "@/components/sponsor/InsersioneSponsor.vue";
+const Collaboratori = ref([
 
-
-
-function createIns(titolo, descrizione, imageURL){
-  return {
-    titolo,
-    descrizione,
-    imageURL: new URL(imageURL, import.meta.url).href
-  }
-}
-const news = [
-  new createIns("DEWESoft",           "Proprio loro",                     "/sponsor_page/dewe.png"),
-  new createIns("Nlcomp",             "Ebbene si",                        "/sponsor_page/nlcomp.webp"),
-  new createIns("Università di pisa", "Nonostante tutto",                 "/sponsor_page/unipi.jpg"),
-  new createIns("CRM composti",       "Mettere una descrizione",          "/sponsor_page/CRMcomposti.png"),
-  new createIns("EUROAVIA Pisa",      "Si vola",                          "/sponsor_page/EUROAVIAPisa.png"),
-  new createIns("AISLER",             "Lo sanno solo loro cosa fanno",    "/sponsor_page/AISLER.png"),
-  new createIns("Ansys",              "Quelli meglio erano finiti",       "/sponsor_page/Ansys.png"),
-  new createIns("BLUETTI",            "Palese non me ne ero dimenticato", "/sponsor_page/BLUETTI.png")
-]
+  {titolo:"DEWESoft",           descrizione:"Proprio loro",                     imageURL:"/sponsor_page/dewe.png"  ,      categoria:"", riferimento:"https://dewesoft.com/it"},
+  {titolo:"Nlcomp",             descrizione:"Ebbene si",                        imageURL:"/sponsor_page/nlcomp.webp",     categoria:"", riferimento:"https://northernlightcomposites.com/"},
+  {titolo:"Università di pisa", descrizione:"Nonostante tutto",                 imageURL:"/sponsor_page/unipi.jpg",       categoria:"", riferimento:"https://www.unipi.it/"},
+  {titolo:"CRM composti",       descrizione:"Mettere una descrizione",          imageURL:"/sponsor_page/CRMcomposti.png", categoria:"", riferimento:"https://crmcompositi.com/"},
+  {titolo:"EUROAVIA Pisa",      descrizione:"Si vola",                          imageURL:"/sponsor_page/EUROAVIAPisa.png",categoria:"", riferimento:"https://pisa.euroavia.eu/"},
+  {titolo:"AISLER",             descrizione:"Lo sanno solo loro cosa fanno",    imageURL:"/sponsor_page/AISLER.png",      categoria:"", riferimento:"https://aisler.net/it"},
+  {titolo:"Ansys",              descrizione:"Quelli meglio erano finiti",       imageURL:"/sponsor_page/Ansys.png",       categoria:"", riferimento:"https://www.ansys.com/it-it"},
+  {titolo:"BLUETTI",            descrizione:"Palese non me ne ero dimenticato", imageURL:"/sponsor_page/BLUETTI.png",     categoria:"", riferimento:"https://it.bluettipower.eu/"}
+]);
 </script>
 
 <template>
-  <div style="background: linear-gradient(
-	#29446E 0%,
-	#152845 50%
-	) ">
-    <img src="/sponsor_page/Sfondale.png" alt="logo" class="logoNewsLetter">
-    <hr style="width: 90%; margin-top: 10vh; margin-bottom: 10vh">
-    <div v-for="i in Array(news.length).keys()">
-      <slot>
-        <NewsCard
-            :titolo="news[i].titolo"
-            :descrizione="news[i].descrizione"
-            :imageURL="news[i].imageURL"
-            :image_goes_left=" i % 2 === 0"
-        />
-      </slot>
+  <div class="page-container">
+    <div class="header-logo-container">
+      <img src="/public/sponsor_page/Sfondale.png" alt="logo" class="top-logo">
     </div>
-    <br>
+
+    <hr class="separator">
+
+    <!--           :descrizione="Ente.descrizione"-->
+
+    <div class="news-feed">
+      <template v-for="(Ente, index) in Collaboratori" :key="index">
+        <div class="feed-item">
+          <Inserzione
+              :titolo="Ente.titolo"
+
+              :imageURL="Ente.imageURL"
+              :categoria="Ente.categoria"
+              :image_goes_left="true"
+              :rifermento="Ente.riferimento"
+          />
+        </div>
+      </template>
+    </div>
   </div>
 </template>
 
 <style scoped>
-  .logoNewsLetter{
-    max-width: 100%;
-  }
+.page-container {
+  background: linear-gradient(#29446E 0%, #152845 100%);
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden; /* Sicurezza contro lo scroll orizzontale */
+  padding-bottom: 50px; /* Spazio fluido prima del footer */
+}
+
+.header-logo-container {
+  width: 100%;
+  line-height: 0;
+}
+
+.top-logo {
+  width: 100%;
+  max-width: 100%; /* Impedisce all'immagine di uscire dai bordi */
+  height: auto;
+  display: block;
+}
+
+.separator {
+  width: 95%;
+  border: 0.5px solid rgba(255, 255, 255, 0.1);
+  margin: 10px auto 20px auto;
+}
+
+.news-feed {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.feed-item {
+  width: 95%;
+  max-width: 1200px;
+  margin: 15px auto;
+}
+
+/* Fix per eliminare il rettangolo solido: rimuove il margine dell'ultimo elemento */
+.last-item {
+  margin-bottom: 0 !important;
+}
 </style>

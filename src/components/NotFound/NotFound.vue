@@ -13,7 +13,7 @@
 
 
 
-  <h1 style="text-align: center"> Ma che stai a di fra no davvero FR l' URL un c'è </h1>
+  <h1 style="text-align: center"> Ma che stai a di fra no davvero FR la pagina un c'è </h1>
 
 
   <div style="text-align: center">

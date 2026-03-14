@@ -1,7 +1,23 @@
+<script setup>
+</script>
 <template>
   <footer class="site-footer">
+
+
     <div class="footer-container">
-      
+      <div class="footer-column">
+        <h1 class="footer-title">Partners Principali</h1>
+          <a target="_blank" href="/sponsor">
+            <img class="footer-img" src="/public/sponsor_page/dewe.png" alt="" />
+            <img class="footer-img" src="/public/sponsor_page/nlcomp.webp" alt="" />
+            <img class="footer-img" src="/public/sponsor_page/unipi.jpg" alt="" />
+            <img class="footer-img" src="/public/sponsor_page/CRMcomposti.png" alt="" />
+          </a>
+      </div>
+    </div>
+
+    <div class="footer-container">
+
       <div class="footer-column">
         <h3 class="footer-title">STARPI</h3>
         <ul class="footer-links">
@@ -26,7 +42,7 @@
         <h3 class="footer-title">Lavora con noi</h3>
         <ul class="footer-links">
           <li><a href="/posizioni-aperte">Posizioni aperte</a></li>
-          <li><a href="mailto:info.desk@starpi.it">info.desk@starpi.it</a></li>
+          <li><a href="mailto:info.desk@starpi.it">mail.fasulla@sito.kr</a></li>
           <li class="info-text">+39 123 456 7890</li>
           <li><a href="/contatti">Modulo contatti</a></li>
         </ul>
@@ -122,6 +138,11 @@
   color: #DCA74B;
 }
 
+.footer-img {
+  height: 50%;
+  width: 25%;
+  background: #FFFFFF;
+}
 /* ==========================================
    MODULO NEWSLETTER (Breakpoint 1560px sennó esplode)
    ========================================== */
