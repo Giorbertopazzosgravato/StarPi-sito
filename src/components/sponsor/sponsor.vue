@@ -2,15 +2,21 @@
 import { ref } from "vue";
 import Inserzione from "@/components/sponsor/InsersioneSponsor.vue";
 
-const Collaboratori = ref([
+const Collaboratori_Principali = ref([
 
   {titolo:"DEWESoft",           descrizione:"Proprio loro",                     imageURL:"/sponsor_page/dewe.png"  ,      categoria:"", riferimento:"https://dewesoft.com/it"},
   {titolo:"Nlcomp",             descrizione:"Ebbene si",                        imageURL:"/sponsor_page/nlcomp.webp",     categoria:"", riferimento:"https://northernlightcomposites.com/"},
   {titolo:"Università di pisa", descrizione:"Nonostante tutto",                 imageURL:"/sponsor_page/unipi.jpg",       categoria:"", riferimento:"https://www.unipi.it/"},
   {titolo:"CRM composti",       descrizione:"Mettere una descrizione",          imageURL:"/sponsor_page/CRMcomposti.png", categoria:"", riferimento:"https://crmcompositi.com/"},
-  {titolo:"EUROAVIA Pisa",      descrizione:"Si vola",                          imageURL:"/sponsor_page/EUROAVIAPisa.png",categoria:"", riferimento:"https://pisa.euroavia.eu/"},
+  {titolo:"EUROAVIA Pisa",      descrizione:"Si vola",                          imageURL:"/sponsor_page/EUROAVIAPisa.png",categoria:"", riferimento:"https://pisa.euroavia.eu/"}
+]);
+
+const Collaboratori_Secondari = ref([
   {titolo:"AISLER",             descrizione:"Lo sanno solo loro cosa fanno",    imageURL:"/sponsor_page/AISLER.png",      categoria:"", riferimento:"https://aisler.net/it"},
-  {titolo:"Ansys",              descrizione:"Quelli meglio erano finiti",       imageURL:"/sponsor_page/Ansys.png",       categoria:"", riferimento:"https://www.ansys.com/it-it"},
+  {titolo:"Ansys",              descrizione:"Quelli meglio erano finiti",       imageURL:"/sponsor_page/Ansys.png",       categoria:"", riferimento:"https://www.ansys.com/it-it"}
+]);
+
+const Collaboratori_Terzi = ref([
   {titolo:"BLUETTI",            descrizione:"Palese non me ne ero dimenticato", imageURL:"/sponsor_page/BLUETTI.png",     categoria:"", riferimento:"https://it.bluettipower.eu/"}
 ]);
 </script>
@@ -23,14 +29,14 @@ const Collaboratori = ref([
 
     <hr class="separator">
 
-    <!--           :descrizione="Ente.descrizione"-->
 
+    <h1 class="separatore"> Main Partners: </h1>
+    <!--:descrizione="Ente.descrizione"-->
     <div class="news-feed">
-      <template v-for="(Ente, index) in Collaboratori" :key="index">
+      <template v-for="(Ente, index) in Collaboratori_Principali" :key="index">
         <div class="feed-item">
           <Inserzione
               :titolo="Ente.titolo"
-
               :imageURL="Ente.imageURL"
               :categoria="Ente.categoria"
               :image_goes_left="true"
@@ -39,10 +45,50 @@ const Collaboratori = ref([
         </div>
       </template>
     </div>
+
+    <h1 class="separatore"> Partners: </h1>
+    <!--:descrizione="Ente.descrizione"-->
+    <div class="news-feed">
+      <template v-for="(Ente, index) in Collaboratori_Secondari" :key="index">
+        <div class="feed-item">
+          <Inserzione
+              :titolo="Ente.titolo"
+              :imageURL="Ente.imageURL"
+              :categoria="Ente.categoria"
+              :image_goes_left="true"
+              :rifermento="Ente.riferimento"
+          />
+        </div>
+      </template>
+    </div>
+
+    <h1 class="separatore"> In collaboration with: </h1>
+    <!--:descrizione="Ente.descrizione"-->
+    <div class="news-feed">
+      <template v-for="(Ente, index) in Collaboratori_Terzi" :key="index">
+        <div class="feed-item">
+          <Inserzione
+              :titolo="Ente.titolo"
+              :imageURL="Ente.imageURL"
+              :categoria="Ente.categoria"
+              :image_goes_left="true"
+              :rifermento="Ente.riferimento"
+          />
+        </div>
+      </template>
+    </div>
+
+
   </div>
 </template>
 
 <style scoped>
+.separatore {
+  color: #4CC9F0;
+  text-align: center;
+  font-size: 7rem;
+}
+
 .page-container {
   background: linear-gradient(#29446E 0%, #152845 100%);
   min-height: 100vh;
