@@ -1,23 +1,30 @@
 <script setup>
 </script>
+
 <template>
   <footer class="site-footer">
 
-
-    <div class="footer-container">
-      <div class="footer-column">
-        <h1 class="footer-title">Partners Principali</h1>
-          <a target="_blank" href="/sponsor">
-            <img class="footer-img" src="/public/sponsor_page/dewe.png" alt="" />
-            <img class="footer-img" src="/public/sponsor_page/nlcomp.webp" alt="" />
-            <img class="footer-img" src="/public/sponsor_page/unipi.jpg" alt="" />
-            <img class="footer-img" src="/public/sponsor_page/CRMcomposti.png" alt="" />
+    <div class="footer-container sponsor-section">
+      <div class="sponsor-wrapper">
+        <h2 class="footer-title sponsor-title">Partners Principali</h2>
+        <div class="sponsor-grid">
+          <a class="sponsor-card" target="_blank" href="/sponsor">
+            <img src="/public/sponsor_page/dewe.png" alt="Dewe" />
           </a>
+          <a class="sponsor-card" target="_blank" href="/sponsor">
+            <img src="/public/sponsor_page/nlcomp.webp" alt="NL Comp" />
+          </a>
+          <a class="sponsor-card" target="_blank" href="/sponsor">
+            <img src="/public/sponsor_page/unipi.jpg" alt="Unipi" />
+          </a>
+          <a class="sponsor-card" target="_blank" href="/sponsor">
+            <img src="/public/sponsor_page/CRMcomposti.png" alt="CRM Composti" />
+          </a>
+        </div>
       </div>
     </div>
 
     <div class="footer-container">
-
       <div class="footer-column">
         <h3 class="footer-title">STARPI</h3>
         <ul class="footer-links">
@@ -64,7 +71,6 @@
           <button type="submit">Subscribe</button>
         </form>
       </div>
-
     </div>
 
     <div class="footer-bottom">
@@ -78,7 +84,6 @@
    STILI BASE DEL FOOTER
    ========================================== */
 .site-footer {
-  /* Mantenimento colori originali */
   background-color: #1a253d;
   color: #B8B8B8;
   font-family: Calibri, sans-serif;
@@ -92,19 +97,63 @@
    ========================================== */
 .footer-container {
   display: grid;
-  /* Utilizziamo auto-fit per distribuire le colonne in modo fluido */
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 40px;
-  /* Aumentato a 1400px per evitare il taglio laterale e allinearsi meglio al corpo pagina */
   max-width: 1400px; 
-  margin: 0 auto; /* Forza la centratura orizzontale */
+  margin: 0 auto;
   padding: 0 40px;
   padding-bottom: 50px;
-  justify-content: center; /* Assicura che le colonne siano centrate nel contenitore */
+  justify-content: center;
 }
 
 .newsletter-col {
   min-width: 280px;
+}
+
+/* ==========================================
+   SEZIONE SPONSOR (STILE CARD)
+   ========================================== */
+.sponsor-section {
+  display: block;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.sponsor-title {
+  text-align: center;
+  font-size: 32px !important;
+  margin-bottom: 30px;
+}
+
+.sponsor-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  width: 100%;
+}
+
+.sponsor-card {
+  background-color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  padding: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 3 / 2;
+  text-decoration: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.sponsor-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+}
+
+.sponsor-card img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
 }
 
 /* ==========================================
@@ -138,13 +187,8 @@
   color: #DCA74B;
 }
 
-.footer-img {
-  height: 50%;
-  width: 25%;
-  background: #FFFFFF;
-}
 /* ==========================================
-   MODULO NEWSLETTER (Breakpoint 1560px sennó esplode)
+   MODULO NEWSLETTER 
    ========================================== */
 .newsletter-form {
   display: flex;
@@ -181,7 +225,6 @@
   background-color: #DCA74B;
 }
 
-/* Fix per evitare il taglio laterale a risoluzioni intermedie */
 @media (max-width: 1560px) {
   .newsletter-form {
     flex-direction: column;
@@ -227,6 +270,22 @@
     padding: 0 20px;
     padding-bottom: 40px;
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }
+  
+  .sponsor-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+  
+  .sponsor-card {
+    padding: 15px;
+    aspect-ratio: 1 / 1;
+  }
+}
+
+@media (max-width: 480px) {
+  .sponsor-grid {
+    grid-template-columns: 1fr;
   }
 }
 </style>

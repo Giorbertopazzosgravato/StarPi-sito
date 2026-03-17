@@ -3,107 +3,103 @@ defineProps({
   titolo: String,
   descrizione: String,
   imageURL: String,
-  categoria: { type: String, default: "NEWS" },
+  categoria: { type: String, default: "" },
   image_goes_left: { type: Boolean, default: true },
   rifermento: { type: String, default: "/NotFound"}
 });
 </script>
 
 <template>
-  <div class="news-card" :class="{ 'row-reverse': !image_goes_left }">
-    <a :href="rifermento"  class="news-card" style=" text-decoration: none" >
-    <div class="image-section">
-      <img :src="imageURL" alt="News Image" class="news-img" />
-    </div>
-    <div class="text-section">
-      <div class="text-inner">
-        <span class="category">{{ categoria }}</span>
-        <h1 class="title">{{ titolo }}</h1>
-        <p class="description">{{ descrizione }}</p>
+  <div class="card-container">
+    <a :href="rifermento" target="_blank" class="news-card">
+      <div class="image-section">
+        <img :src="imageURL" alt="Logo" class="news-img" />
       </div>
-    </div>
+      <div class="text-section">
+        <div class="text-inner">
+          <span v-if="categoria" class="category">{{ categoria }}</span>
+          <h2 class="title">{{ titolo }}</h2>
+          <p class="description">{{ descrizione }}</p>
+        </div>
+      </div>
     </a>
   </div>
 </template>
 
 <style scoped>
+  .card-container {
+    width: 100%;
+    height: 100%;
+  }
+
   .news-card {
     display: flex;
     flex-direction: column;
-    width: 100%;
+    height: 100%;
     background-color: #1a1f2c;
-    border-radius: 40px;
+    border-radius: 20px;
     overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
     color: white;
+    text-decoration: none;
+    transition: all 0.3s ease;
   }
+
   .news-card:hover {
     background-color: #2a2f4c;
-    color: white;
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.4);
   }
 
   .image-section {
     width: 100%;
-    height: 100%;
+    height: 140px; /* Altezza fissa per i loghi nel muro */
     background: #FFFFFF;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .news-img {
-    width: 100%;
-    height: 100%;
-    display: block;
-    object-fit: cover;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
   }
+
   .text-section {
-    width: 100%;
-    padding: 25px;
+    padding: 15px;
+    flex-grow: 1;
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
   }
 
-  /* Font ridimensionati per evitare overflow su mobile */
   .category {
-    font-size: 1.2rem;
-    color: #888;
+    font-size: 0.7rem;
+    color: #4CC9F0;
     font-weight: bold;
-    letter-spacing: 2px;
     text-transform: uppercase;
-  }
-  .title {
-    font-size: 1.8rem;
-    margin: 10px 0;
-    line-height: 1.2;
-    word-wrap: break-word;
-  }
-  .description {
-    font-size: 1.1rem;
-    color: #ccc;
-    line-height: 1.5;
-    white-space: pre-wrap;
+    display: block;
+    margin-bottom: 4px;
   }
 
-  @media (min-width: 850px) {
-    .news-card {
-      flex-direction: row;
-      height: 380px;
-      border-radius: 50px;
-    }
-    .row-reverse {
-      flex-direction: row-reverse;
-    }
-    .image-section {
-      width: 45%;
-      height: 100%;
-    }
-    .text-section {
-      width: 55%;
-      padding: 40px 60px;
-    }
-    .title {
-      font-size: 4rem;
-    }
-    .category {
-      font-size: 1.5rem;
-    }
+  .title {
+    font-size: 1.1rem;
+    margin: 0 0 5px 0;
+    font-weight: bold;
+  }
+
+  .description {
+    font-size: 0.85rem;
+    color: #ccc;
+    line-height: 1.3;
+    margin: 0;
+    /* Taglia il testo se troppo lungo per mantenere le card uniformi */
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
   }
 </style>

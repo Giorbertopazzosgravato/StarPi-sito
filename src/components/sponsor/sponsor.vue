@@ -3,21 +3,20 @@ import { ref } from "vue";
 import Inserzione from "@/components/sponsor/InsersioneSponsor.vue";
 
 const Collaboratori_Principali = ref([
-
-  {titolo:"DEWESoft",           descrizione:"Proprio loro",                     imageURL:"/sponsor_page/dewe.png"  ,      categoria:"", riferimento:"https://dewesoft.com/it"},
-  {titolo:"Nlcomp",             descrizione:"Ebbene si",                        imageURL:"/sponsor_page/nlcomp.webp",     categoria:"", riferimento:"https://northernlightcomposites.com/"},
-  {titolo:"Università di pisa", descrizione:"Nonostante tutto",                 imageURL:"/sponsor_page/unipi.jpg",       categoria:"", riferimento:"https://www.unipi.it/"},
-  {titolo:"CRM composti",       descrizione:"Mettere una descrizione",          imageURL:"/sponsor_page/CRMcomposti.png", categoria:"", riferimento:"https://crmcompositi.com/"},
-  {titolo:"EUROAVIA Pisa",      descrizione:"Si vola",                          imageURL:"/sponsor_page/EUROAVIAPisa.png",categoria:"", riferimento:"https://pisa.euroavia.eu/"}
+  {titolo:"DEWESoft", descrizione:"idk man", imageURL:"/sponsor_page/dewe.png"  , categoria:"", riferimento:"https://dewesoft.com/it"},
+  {titolo:"Nlcomp", descrizione:"", imageURL:"/sponsor_page/nlcomp.webp", categoria:"???", riferimento:"https://northernlightcomposites.com/"},
+  {titolo:"Università di pisa", descrizione:"idk man", imageURL:"/sponsor_page/unipi.jpg", categoria:"PARTNER", riferimento:"https://www.unipi.it/"},
+  {titolo:"CRM composti", descrizione:"idk man", imageURL:"/sponsor_page/CRMcomposti.png", categoria:"gold 3", riferimento:"https://crmcompositi.com/"},
+  {titolo:"EUROAVIA Pisa", descrizione:"idk man", imageURL:"/sponsor_page/EUROAVIAPisa.png", categoria:"suca", riferimento:"https://pisa.euroavia.eu/"}
 ]);
 
 const Collaboratori_Secondari = ref([
-  {titolo:"AISLER",             descrizione:"Lo sanno solo loro cosa fanno",    imageURL:"/sponsor_page/AISLER.png",      categoria:"", riferimento:"https://aisler.net/it"},
-  {titolo:"Ansys",              descrizione:"Quelli meglio erano finiti",       imageURL:"/sponsor_page/Ansys.png",       categoria:"", riferimento:"https://www.ansys.com/it-it"}
+  {titolo:"AISLER", descrizione:"idk man", imageURL:"/sponsor_page/AISLER.png", categoria:"", riferimento:"https://aisler.net/it"},
+  {titolo:"Ansys", descrizione:"idk man", imageURL:"/sponsor_page/Ansys.png", categoria:"", riferimento:"https://www.ansys.com/it-it"}
 ]);
 
 const Collaboratori_Terzi = ref([
-  {titolo:"BLUETTI",            descrizione:"Palese non me ne ero dimenticato", imageURL:"/sponsor_page/BLUETTI.png",     categoria:"", riferimento:"https://it.bluettipower.eu/"}
+  {titolo:"BLUETTI", descrizione:"idk man", imageURL:"/sponsor_page/BLUETTI.png", categoria:"", riferimento:"https://it.bluettipower.eu/"}
 ]);
 </script>
 
@@ -29,109 +28,112 @@ const Collaboratori_Terzi = ref([
 
     <hr class="separator">
 
-
-    <h1 class="separatore"> Main Partners: </h1>
-    <!--:descrizione="Ente.descrizione"-->
-    <div class="news-feed">
-      <template v-for="(Ente, index) in Collaboratori_Principali" :key="index">
-        <div class="feed-item">
+    <section class="sponsor-section">
+      <h1 class="separatore">Main Partners</h1>
+      <div class="sponsor-grid">
+        <div v-for="(Ente, index) in Collaboratori_Principali" :key="index" class="grid-item">
           <Inserzione
               :titolo="Ente.titolo"
+              :descrizione="Ente.descrizione"
               :imageURL="Ente.imageURL"
               :categoria="Ente.categoria"
-              :image_goes_left="true"
               :rifermento="Ente.riferimento"
           />
         </div>
-      </template>
-    </div>
+      </div>
+    </section>
 
-    <h1 class="separatore"> Partners: </h1>
-    <!--:descrizione="Ente.descrizione"-->
-    <div class="news-feed">
-      <template v-for="(Ente, index) in Collaboratori_Secondari" :key="index">
-        <div class="feed-item">
+    <section class="sponsor-section">
+      <h1 class="separatore">Partners</h1>
+      <div class="sponsor-grid">
+        <div v-for="(Ente, index) in Collaboratori_Secondari" :key="index" class="grid-item">
           <Inserzione
               :titolo="Ente.titolo"
+              :descrizione="Ente.descrizione"
               :imageURL="Ente.imageURL"
-              :categoria="Ente.categoria"
-              :image_goes_left="true"
               :rifermento="Ente.riferimento"
           />
         </div>
-      </template>
-    </div>
+      </div>
+    </section>
 
-    <h1 class="separatore"> In collaboration with: </h1>
-    <!--:descrizione="Ente.descrizione"-->
-    <div class="news-feed">
-      <template v-for="(Ente, index) in Collaboratori_Terzi" :key="index">
-        <div class="feed-item">
+    <section class="sponsor-section">
+      <h1 class="separatore">In collaboration with</h1>
+      <div class="sponsor-grid">
+        <div v-for="(Ente, index) in Collaboratori_Terzi" :key="index" class="grid-item">
           <Inserzione
               :titolo="Ente.titolo"
+              :descrizione="Ente.descrizione"
               :imageURL="Ente.imageURL"
-              :categoria="Ente.categoria"
-              :image_goes_left="true"
               :rifermento="Ente.riferimento"
           />
         </div>
-      </template>
-    </div>
-
-
+      </div>
+    </section>
   </div>
 </template>
 
 <style scoped>
-.separatore {
-  color: #4CC9F0;
-  text-align: center;
-  font-size: 7rem;
-}
-
 .page-container {
   background: linear-gradient(#29446E 0%, #152845 100%);
   min-height: 100vh;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  overflow-x: hidden; /* Sicurezza contro lo scroll orizzontale */
-  padding-bottom: 50px; /* Spazio fluido prima del footer */
+  padding-bottom: 80px;
 }
 
 .header-logo-container {
   width: 100%;
-  line-height: 0;
 }
 
 .top-logo {
   width: 100%;
-  max-width: 100%; /* Impedisce all'immagine di uscire dai bordi */
   height: auto;
   display: block;
 }
 
 .separator {
-  width: 95%;
+  width: 90%;
   border: 0.5px solid rgba(255, 255, 255, 0.1);
-  margin: 10px auto 20px auto;
+  margin: 20px auto;
 }
 
-.news-feed {
+.sponsor-section {
+  max-width: 1300px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+.separatore {
+  color: #4CC9F0;
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/* IL CUORE DEL WALL: LA GRIGLIA */
+.sponsor-grid {
+  display: grid;
+  /* Crea colonne da almeno 250px che si riempiono automaticamente */
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 25px;
+  justify-content: center;
+}
+
+.grid-item {
   display: flex;
-  flex-direction: column;
-  gap: 0;
+  justify-content: center;
 }
 
-.feed-item {
-  width: 95%;
-  max-width: 1200px;
-  margin: 15px auto;
-}
-
-/* Fix per eliminare il rettangolo solido: rimuove il margine dell'ultimo elemento */
-.last-item {
-  margin-bottom: 0 !important;
+/* Ottimizzazione Mobile */
+@media (max-width: 600px) {
+  .sponsor-grid {
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); /* Card più piccole su mobile */
+    gap: 15px;
+  }
+  
+  .separatore {
+    font-size: 1.5rem;
+  }
 }
 </style>
