@@ -1,6 +1,7 @@
 <script setup>
   import TeamSubsection from "@/components/team_page/TeamSubsection.vue";
   import AnnataWrapper from "@/components/team_page/AnnataWrapper.vue";
+  import {useRoute} from "vue-router";
 
   function createCapoDipartimento( nome, quote, linkedin_link, imgURL){
     return {
@@ -13,12 +14,22 @@
     }
   }
 
-  let Anno = 2025;
+
+  let Anno = Number(useRoute().params.pathMatch)
+  if(Anno){
+    if(Anno < 2024) {
+      Anno = 2024;
+    }
+  } else {
+    Anno = 2025;
+  }
 
   function PreAnno() {
-    if(Anno > 2025) {
+    if(Anno > 2024) {
       Anno--;
     }
+    console.log();
+
   }
   function PostAnno() {
     Anno++;
@@ -60,7 +71,7 @@
   <table style="width: 100%">
     <tr style="width: 100%">
       <th style="width: 33%">
-        <a :href="'team#'+(Anno-1)" style="text-align: right" :onclick="PreAnno">
+        <a :href="'../team/'+(Anno-1)" style="text-align: right" :onclick="PreAnno">
           <h1 style="color: orange"> <== </h1>
         </a>
       </th>
@@ -68,7 +79,7 @@
         <h1 style="color: #FF6200"> {{Anno}} </h1>
       </th>
       <th style="width: 33%">
-        <a :href="'team#'+(Anno+1)" style="text-align: left" :onclick="PostAnno">
+        <a :href="'../team/'+(Anno+1)" style="text-align: left" :onclick="PostAnno">
           <h1 style="color: orange"> ==> </h1>
         </a>
       </th>
