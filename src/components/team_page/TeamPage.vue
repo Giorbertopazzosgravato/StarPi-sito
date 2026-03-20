@@ -17,11 +17,11 @@
 
   const route = useRoute()
   const anno = ref(Number(useRoute().params.pathMatch) || 2025)
-  const current_year = new Date().getFullYear();
+  const current_year = ref(new Date().getFullYear() - 1);
 
   const validaAnno = (val) => {
 	  const n = Number(val)
-	  return n < 2024 ? 2024 : n > current_year? current_year : n
+	  return n < 2024 ? 2024 : n > current_year.value? current_year.value : n
   }
   watch(
 	  () => route.params.pathMatch,
@@ -35,8 +35,8 @@
 	  }
   }
   function postAnno(){
-	  if(anno.value >= current_year ){
-		  anno.value = current_year
+	  if(anno.value >= current_year.value ){
+		  anno.value = current_year.value
 	  } else {
 		  anno.value++
 	  }
@@ -81,10 +81,10 @@
         </router-link>
       </th>
       <th style="width: 33%">
-        <h1 style="color: #FF6200"> {{anno}} </h1>
+        <h1 style="color: #FF6200"> {{anno + " - " + (anno+1)}} </h1>
       </th>
       <th style="width: 33%">
-        <router-link :to="'../team/' + (anno + 1)" @click="postAnno" style="text-align: left">
+        <router-link :to="`/team/${anno < current_year ? anno + 1 : current_year}`" @click="postAnno" style="text-align: left">
           <h1 style="color: orange"> ==> </h1>
         </router-link>
       </th>
