@@ -2,6 +2,7 @@
   import TeamSubsection from "@/components/team_page/TeamSubsection.vue";
   import AnnataWrapper from "@/components/team_page/AnnataWrapper.vue";
   import {useRoute} from "vue-router";
+  import {onMounted, ref, watch} from "vue";
 
   function createCapoDipartimento( nome, quote, linkedin_link, imgURL){
     return {
@@ -14,28 +15,32 @@
     }
   }
 
+  const route = useRoute()
+  const anno = ref(Number(useRoute().params.pathMatch) || 2025)
+  const current_year = new Date().getFullYear();
 
-  let Anno = Number(useRoute().params.pathMatch)
-  if(Anno){
-    if(Anno < 2024) {
-      Anno = 2024;
-    }
-  } else {
-    Anno = 2025;
+  const validaAnno = (val) => {
+	  const n = Number(val)
+	  return n < 2024 ? 2024 : n > current_year? current_year : n
   }
-
-  function PreAnno() {
-    if(Anno > 2024) {
-      Anno--;
-    }
-    console.log();
-
+  watch(
+	  () => route.params.pathMatch,
+	  (newPath) => {
+		  anno.value = validaAnno(newPath)
+	  }
+  )
+  function preAnno(){
+	  if(anno.value > 2024){
+		  anno.value--;
+	  }
   }
-  function PostAnno() {
-    Anno++;
+  function postAnno(){
+	  if(anno.value >= current_year ){
+		  anno.value = current_year
+	  } else {
+		  anno.value++
+	  }
   }
-
-
 
   const Pagina = {
     Anno: '2025',
@@ -71,23 +76,20 @@
   <table style="width: 100%">
     <tr style="width: 100%">
       <th style="width: 33%">
-        <a :href="'../team/'+(Anno-1)" style="text-align: right" :onclick="PreAnno">
+        <router-link :to="`/team/${anno > 2024 ? anno - 1 : 2024}`" @click="preAnno" style="text-align: right">
           <h1 style="color: orange"> <== </h1>
-        </a>
+        </router-link>
       </th>
       <th style="width: 33%">
-        <h1 style="color: #FF6200"> {{Anno}} </h1>
+        <h1 style="color: #FF6200"> {{anno}} </h1>
       </th>
       <th style="width: 33%">
-        <a :href="'../team/'+(Anno+1)" style="text-align: left" :onclick="PostAnno">
+        <router-link :to="'../team/' + (anno + 1)" @click="postAnno" style="text-align: left">
           <h1 style="color: orange"> ==> </h1>
-        </a>
+        </router-link>
       </th>
     </tr>
   </table>
-
-
-
 
   <div>
   <AnnataWrapper :anno="Pagina.Anno">
