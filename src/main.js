@@ -14,10 +14,10 @@ const routes = [
     {path: "/",                redirect:  "/home"      },
     {path: "/home",            component: HomePage     },
     {path: "/news",            component: NewsPage     },
-    {path: "/team",            component: TeamPage     },
+ //   {path: "/team",            redirect:  "/team#2025" },
+    {path: "/team",            component: TeamPage     , props:true},
     {path: "/progetti",        component: ProgettiPage },
     {path: "/sponsor",         component: sponsors     },
-
     {path: "/login",           component: Utenza       },
     {path: '/:pathMatch(.*)',  component: NotFound     }
 ]
