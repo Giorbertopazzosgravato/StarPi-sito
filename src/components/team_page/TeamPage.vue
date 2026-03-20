@@ -65,12 +65,8 @@
 </script>
 
 <template>
-  <br>
-  <br>
-  <br>
-  <br>
 	<div class="TeamsImageContainer">
-		<img src="/team_page/teams_background_2.png" width="100%" alt="bgimage"/>
+		<img src="/team_page/teams_background.png" width="100%" alt="bgimage"/>
 	</div>
 
   <table style="width: 100%">

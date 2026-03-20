@@ -25,8 +25,20 @@ const routes = [
 const router = createRouter({
     history: createWebHistory(),
     routes,
-    scrollBehavior() {
-        return { top: 0 }
+    scrollBehavior(to, from, savedPosition) {
+        // Se l'utente torna indietro con le frecce del browser, ripristina la posizione
+        if (savedPosition) {
+            return savedPosition;
+        }
+
+        // Se stiamo navigando all'interno della sezione "team" (es. da /team/2024 a /team/2025)
+        // NON scrollare, rimani dove sei.
+        if (to.path.startsWith('/team') && from.path.startsWith('/team')) {
+            return false;
+        }
+
+        // In TUTTI gli altri casi (cambio pagina reale tra home, news, ecc.), vai in cima
+        return { top: 0 };
     }
 })
 
