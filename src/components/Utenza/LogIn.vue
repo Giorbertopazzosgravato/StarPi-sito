@@ -7,6 +7,10 @@
   <br>
   <br>
   <br>
-    <button> accedi </button>
+    <button>
+      <a href="/AreaPrivata">
+        accedi utente
+      </a>
+    </button>
 
 </template>
