@@ -7,8 +7,10 @@ import NewsPage     from "@/components/news_page/NewsPage.vue";
 import TeamPage     from "@/components/team_page/TeamPage.vue";
 import ProgettiPage from "@/components/progetti_page/ProgettiPage.vue";
 import NotFound     from "@/components/NotFound/NotFound.vue";
-import Utenza       from "@/components/Utenza/LogIn.vue";
+import LogIn       from "@/components/Utenza/LogIn.vue";
 import sponsors     from "@/components/sponsor/sponsor.vue";
+import utenza from "@/components/Utenza/Utente/AreaPrivata.vue";
+import amministrazione from "@/components/Utenza/Ammi/Amministrazione.vue";
 
 const routes = [
     {path: "/",                redirect:  "/home"      },
@@ -18,7 +20,10 @@ const routes = [
     {path: "/team/:pathMatch(\\d{4})",            component: TeamPage     , props:true},
     {path: "/progetti",        component: ProgettiPage },
     {path: "/sponsor",         component: sponsors     },
-    {path: "/login",           component: Utenza       },
+    {path: "/login",                    component: LogIn,          props:false},
+    {path: "/AreaPrivata",              component: utenza,          props:false},
+    {path: "/AreaPrivata/:pathMatch(.*)",              component: utenza,          props:true},
+    {path: "/Master",                   component: amministrazione, props:false},
     {path: '/:pathMatch(.*)',  component: NotFound     }
 ]
 
