@@ -35,13 +35,15 @@ const route = useRoute();
 const isActiveRoute = (path) => route ? route.path === path : false;
 
 const navLinks = [
-  { title: "Home", link: "/home" },
-  { title: "News", link: "/news" },
-  { title: "Progetti", link: "/progetti" },
-  { title: "Team", link: "/team" },
-  { title: "Galleria", link: "/galleria" },
+  { title: "Home",       link: "/home" },
+  { title: "News",       link: "/news" },
+  { title: "Progetti",   link: "/progetti" },
+  { title: "Team",       link: "/team" },
+  //{ title: "Galleria",   link: "/Galleria" },
+  //{ title: "Reclute", link:"/Reclute}
   { title: "Contact us", link: "/contatti" },
-  { title: "Sponsors", link: "/sponsor" }
+  { title: "Sponsors",   link: "/sponsor" }
+
 ];
 </script>
 
@@ -49,7 +51,6 @@ const navLinks = [
   <div>
     <header class="desktop-navbar" :class="{ 'navbar-hidden': !isNavbarVisible }">
       <div class="navbar-container">
-        
         <RouterLink to="/home" class="logo-container">
           <img src="/navBar/logo_starpi.png" alt="Logo StarPi" class="real-logo" />
           <span class="logo-text">StarPi</span>
@@ -66,9 +67,9 @@ const navLinks = [
             {{ item.title }}
           </RouterLink>
 
-          <RouterLink to="/login" class="modern-link login-btn" :class="{ 'active-link': isActiveRoute('/login') }">
+    <!--      <RouterLink to="/login" class="modern-link login-btn" :class="{ 'active-link': isActiveRoute('/login') }">
             Log in
-          </RouterLink>
+          </RouterLink>-->
         </nav>
       </div>
     </header>
@@ -100,9 +101,9 @@ const navLinks = [
           
           <hr class="mobile-divider">
 
-          <RouterLink to="/login" class="nav-link login-mobile" active-class="active-link-mobile" @click="closeSidebar">
+  <!--        <RouterLink to="/login" class="nav-link login-mobile" active-class="active-link-mobile" @click="closeSidebar">
             Log in
-          </RouterLink>
+          </RouterLink>-->
         </nav>
       </aside>
     </div>

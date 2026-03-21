@@ -9,16 +9,16 @@
         <h2 class="footer-title sponsor-title">Partners Principali</h2>
         <div class="sponsor-grid">
           <a class="sponsor-card" target="_blank" href="/sponsor">
-            <img src="/public/sponsor_page/dewe.png" alt="Dewe" />
+            <img src="/sponsor_page/dewe.png" alt="Dewe" />
           </a>
           <a class="sponsor-card" target="_blank" href="/sponsor">
-            <img src="/public/sponsor_page/nlcomp.webp" alt="NL Comp" />
+            <img src="/sponsor_page/nlcomp.webp" alt="NL Comp" />
           </a>
           <a class="sponsor-card" target="_blank" href="/sponsor">
-            <img src="/public/sponsor_page/unipi.jpg" alt="Unipi" />
+            <img src="/sponsor_page/unipi.jpg" alt="Unipi" />
           </a>
           <a class="sponsor-card" target="_blank" href="/sponsor">
-            <img src="/public/sponsor_page/CRMcomposti.png" alt="CRM Composti" />
+            <img src="/sponsor_page/CRMcomposti.png" alt="CRM Composti" />
           </a>
         </div>
       </div>
