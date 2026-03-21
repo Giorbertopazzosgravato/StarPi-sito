@@ -14,11 +14,6 @@ const progetti = ref([
     img: "/progetti_page/leaning_logo.jpg", 
     link: "https://www.leaningproject.it/" /* Link diretto esterno */
   },
-  { 
-    title: "...", 
-    img: "/progetti_page/placeholder_logo.png.jpg", 
-    link: "/progetti" 
-  }
 ]);
 </script>
 

@@ -32,7 +32,6 @@
   function preAnno(){
 	  if(anno.value > 2024){
 		  anno.value--;
-		  fetch_teams()
 	  }
   }
   function postAnno(){
@@ -40,95 +39,74 @@
 		  anno.value = current_year.value
 	  } else {
 		  anno.value++
-		  fetch_teams()
-	  }
-
-  }
-
-  const teams = ref([{
-	  dipartimento : "Pisellino corto corto",
-	  capo: {
-		  nome: "Giacomo",
-		  cognome: "Consani",
-		  ruolo: "chief",
-		  link: "https://pornhub.com",
-	  },
-	  persone:[
-		  {
-			  nome: "Riccardo",
-			  cognome: "scaletta",
-			  ruolo: "user",
-			  link: "https://pornhub.com",
-		  },
-		  {
-			  nome: "Mattia",
-			  cognome: "Drogo",
-			  ruolo: "user",
-			  link: "https://pornhub.com",
-		  }
-	  ]
-  }])
-
-  async function fetch_teams(){
-	  try{
-		  const response = await fetch("http://localhost:7878/database/send_me_teams/" + anno.value);
-		  if(!response.ok){
-			  throw new Error("my teams are kinda homeless");
-		  }
-		  console.log("(=^･ω･^=) <-mao ")
-		  const data = await response.json();
-		  console.log("data: ", data);
-		  teams.value = data;
-
-	  } catch(e){
-		  console.log(e);
 	  }
   }
 
-  onMounted(()=>{
-	  fetch_teams();
-  })
+  const Pagina = {
+    Anno: '2025',
+    Dipartimenti: [{
+      NomeDipartimento: 'Architetture e sistemi operativi',
+      CapoDipartimento: new createCapoDipartimento(
+        'Evil Marco Danelutto',
+        'odio architetture e sistemi operativi',
+        'https://pornhub.com/',
+          '/aeso.png'
+      ),
+      Membri: [
+        new createPersona('Giacomo Consani', '', '/car.gif'),
+        new createPersona('Giacomo Consani', '', '/car.gif'),
+        new createPersona('Giacomo Consani', '', '/car.gif'),
+        new createPersona('Giacomo Consani', '', '/car.gif'),
+        new createPersona('Giacomo Consani', '', '/car.gif'),
+        new createPersona('Giacomo Consani', '', '/car.gif')
+      ]
+      }]
+  }
 </script>
 
 <template>
-	<div class="TeamsImageContainer">
-		<img src="/team_page/teams_background.png" width="100%" alt="bgimage"/>
-	</div>
-
-  <table style="width: 100%">
-    <tr style="width: 100%">
-      <th style="width: 33%">
-        <router-link :to="`/team/${anno > 2024 ? anno - 1 : 2024}`" @click="preAnno" style="text-align: right">
-          <h1 style="color: orange"> <== </h1>
-        </router-link>
-      </th>
-      <th style="width: 33%">
-        <h1 style="color: #FF6200"> {{anno + " - " + (anno+1)}} </h1>
-      </th>
-      <th style="width: 33%">
-        <router-link :to="`/team/${anno < current_year ? anno + 1 : current_year}`" @click="postAnno" style="text-align: left">
-          <h1 style="color: orange"> ==> </h1>
-        </router-link>
-      </th>
-    </tr>
-  </table>
-
-  <div>
-  <AnnataWrapper :anno="anno">
-    <div>
-      <template v-for="(dipartimento, index) in teams" :key="index">
-        <TeamSubsection
-          :nome_dipartimento="dipartimento.dipartimento"
-          :capoDipartimento="dipartimento.capo"
-          :persone="dipartimento.persone"
-        />
-      </template>
-    </div>
-  </AnnataWrapper>
+  <div class="header-section">
+    <img src="/team_page/teams_background.png" class="bg-image" alt="bgimage"/>
   </div>
+  <div class="YearNavContainer">
+      
+      <router-link
+        :to="`/Team/${anno > 2024 ? anno - 1 : 2024}`"
+        @click="preAnno"
+        class="YearNavButton"
+        :class="{'NavButtonDisabled': anno <= 2024}"
+      >
+        <span>&#10094;</span> 
+      </router-link>
 
+      <div class="YearDisplay">
+        <span class="Yeartext">{{ anno }}</span>
+        <span class="YearSeparator">/</span>
+        <span class="Yeartext">{{ anno + 1 }}</span>
+      </div>
 
+      <router-link
+        :to="`/Team/${anno < current_year ? anno + 1 : current_year}`"
+        @click="postAnno"
+        class="YearNavButton"
+        :class="{'NavButtonDisabled': anno >= current_year}"
+      >
+        <span>&#10095;</span>
+      </router-link>
 
+    </div>
+  <div class="content-section">
+    <AnnataWrapper :anno="Pagina.Anno">
+      <div v-for="(Dipa, index) in Pagina.Dipartimenti" :key="index">
+        <TeamSubsection
+          :nome_dipartimento="Dipa.NomeDipartimento"
+          :capoDipartimento="Dipa.CapoDipartimento"
+          :persone="Dipa.Membri"
+        />
+      </div>
+    </AnnataWrapper>
+  </div>
+</template>
 <!--
   <div v-if="$route.hash === '#2024'" class="feed-item">
     <AnnataWrapper anno="2024">
@@ -169,13 +147,88 @@
     </AnnataWrapper>
   </div>
   -->
-</template>
 
 <style scoped>
-.TeamsImageContainer{
-	display: flex;
-	justify-content: center;
-	max-width: 100%;
-	overflow: hidden;
+.bg-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.YearNavContainer {
+  position: relative; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  margin: -25px auto 50px auto; 
+  width: fit-content;
+  z-index: 10;
+}
+
+.content-section {
+  position: relative;
+  width: 100%;
+  padding-top: 20px;
+}
+.YearDisplay {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  background: rgba(15, 27, 49, 0.8);
+  backdrop-filter: blur(8px);
+  padding: 8px 25px;
+  border-radius: 50px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  white-space: nowrap;
+}
+
+.Yeartext {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: #FF6200;
+}
+
+.YearSeparator {
+  color: white;
+  font-size: 1.5rem;
+  opacity: 0.5;
+}
+
+.YearNavButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 45px;
+  height: 45px;
+  background: rgba(15, 27, 49, 0.8);
+  border: 2px solid #FF6200;
+  border-radius: 50%;
+  color: #FF6200;
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: bold;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+.YearNavButton:hover {
+  background: #FF6200;
+  color: white;
+  transform: scale(1.1);
+}
+
+.NavButtonDisabled {
+  opacity: 0.3;
+  pointer-events: none;
+  border-color: #666;
+  color: #666;
+}
+
+/* Fix per schermi piccoli */
+@media (max-width: 600px) {
+  .YearNavContainer { bottom: 5%; gap: 8px; }
+  .Yeartext { font-size: 1.2rem; }
+  .YearNavButton { width: 35px; height: 35px; }
 }
 </style>
