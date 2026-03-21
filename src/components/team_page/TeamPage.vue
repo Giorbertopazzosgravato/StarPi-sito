@@ -32,6 +32,7 @@
   function preAnno(){
 	  if(anno.value > 2024){
 		  anno.value--;
+		  fetch_teams()
 	  }
   }
   function postAnno(){
@@ -39,29 +40,54 @@
 		  anno.value = current_year.value
 	  } else {
 		  anno.value++
+		  fetch_teams()
+	  }
+
+  }
+
+  const teams = ref([{
+	  dipartimento : "Pisellino corto corto",
+	  capo: {
+		  nome: "Giacomo",
+		  cognome: "Consani",
+		  ruolo: "chief",
+		  link: "https://pornhub.com",
+	  },
+	  persone:[
+		  {
+			  nome: "Riccardo",
+			  cognome: "scaletta",
+			  ruolo: "user",
+			  link: "https://pornhub.com",
+		  },
+		  {
+			  nome: "Mattia",
+			  cognome: "Drogo",
+			  ruolo: "user",
+			  link: "https://pornhub.com",
+		  }
+	  ]
+  }])
+
+  async function fetch_teams(){
+	  try{
+		  const response = await fetch("http://localhost:7878/database/send_me_teams/" + anno.value);
+		  if(!response.ok){
+			  throw new Error("my teams are kinda homeless");
+		  }
+		  console.log("(=^･ω･^=) <-mao ")
+		  const data = await response.json();
+		  console.log("data: ", data);
+		  teams.value = data;
+
+	  } catch(e){
+		  console.log(e);
 	  }
   }
 
-  const Pagina = {
-    Anno: '2025',
-    Dipartimenti: [{
-      NomeDipartimento: 'Architetture e sistemi operativi',
-      CapoDipartimento: new createCapoDipartimento(
-        'Evil Marco Danelutto',
-        'odio architetture e sistemi operativi',
-        'https://pornhub.com/',
-          '/aeso.png'
-      ),
-      Membri: [
-        new createPersona('Giacomo Consani', '', '/car.gif'),
-        new createPersona('Giacomo Consani', '', '/car.gif'),
-        new createPersona('Giacomo Consani', '', '/car.gif'),
-        new createPersona('Giacomo Consani', '', '/car.gif'),
-        new createPersona('Giacomo Consani', '', '/car.gif'),
-        new createPersona('Giacomo Consani', '', '/car.gif')
-      ]
-      }]
-  }
+  onMounted(()=>{
+	  fetch_teams();
+  })
 </script>
 
 <template>
@@ -88,13 +114,13 @@
   </table>
 
   <div>
-  <AnnataWrapper :anno="Pagina.Anno">
+  <AnnataWrapper :anno="anno">
     <div>
-      <template v-for="(Dipa, index) in Pagina.Dipartimenti" :key="index">
+      <template v-for="(dipartimento, index) in teams" :key="index">
         <TeamSubsection
-          :nome_dipartimento="Dipa.NomeDipartimento"
-          :capoDipartimento="Dipa.CapoDipartimento"
-          :persone="Dipa.Membri"
+          :nome_dipartimento="dipartimento.dipartimento"
+          :capoDipartimento="dipartimento.capo"
+          :persone="dipartimento.persone"
         />
       </template>
     </div>
