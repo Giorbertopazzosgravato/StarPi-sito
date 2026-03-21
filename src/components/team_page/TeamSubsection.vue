@@ -7,7 +7,7 @@ defineProps({
 		type: String,
 		default: "Giacomo e' fortissimo"
 	},
-	capoDipartimento:{
+	capoDipartimento:[{
 		imgURL: {
 			type: String,
 			default: new URL( "/aeso.png",import.meta.url).href
@@ -24,7 +24,7 @@ defineProps({
 			type: String,
 			default: "https://www.linkedin.com/in/giacomo-consani-82a33a2b2/"
 		}
-	},
+	}],
 	persone: [{
 		nome: {
 			type: String,
@@ -46,11 +46,11 @@ defineProps({
 	<div>
 
 		<h1 class="titolone">{{nome_dipartimento}}</h1>
-		<CapoDipartimento
-			:nome="capoDipartimento.nome"
-			:imgURL="capoDipartimento.imgURL"
-			:quote="capoDipartimento.quote"
-			:linkedin_link="capoDipartimento.linkedin_link"
+		<CapoDipartimento v-for="capo in capoDipartimento" :key="capo.nome"
+			:nome="capo.nome"
+			:imgURL="capo.imgURL"
+			:quote="capo.quote"
+			:linkedin_link="capo.linkedin_link"
 		/>
 		<div class="persone">
 			<div v-for="persona in persone" :key="persona.nome">
