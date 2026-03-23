@@ -6,12 +6,12 @@
 
   function createCapoDipartimento( nome, quote, linkedin_link, imgURL){
 	  return {
-		  nome, quote, linkedin_link, imgURL
+		  nome, quote, link: linkedin_link, imgURL
 	  }
   }
   function createPersona(nome, linkedin_link, imgURL){
 	  return {
-		  nome, linkedin_link, imgURL
+		  nome, link: linkedin_link, imgURL
 	  }
   }
 
@@ -41,14 +41,14 @@
 		  {
 			  nome: "Riccardo",
 			  cognome: "scaletta",
-			  ruolo: "user",
 			  link: "https://pornhub.com",
+			  imgURL: "car.gif"
 		  },
 		  {
 			  nome: "Mattia",
 			  cognome: "Drogo",
-			  ruolo: "user",
 			  link: "https://pornhub.com",
+			  imgURL: "car.gif"
 		  }
 	  ]
   }])
@@ -125,7 +125,7 @@
 				<template v-for="(dipartimento, index) in teams" :key="index">
 					<TeamSubsection
 						:nome_dipartimento="dipartimento.dipartimento"
-						:capoDipartimento="dipartimento.capo"
+						:capo_dipartimento="dipartimento.capo"
 						:persone="dipartimento.persone"
 					/>
 				</template>

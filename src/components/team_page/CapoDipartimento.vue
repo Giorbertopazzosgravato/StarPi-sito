@@ -8,11 +8,15 @@ defineProps({
 		type: String,
 		default: "Il boss finale di AESO"
 	},
+	cognome: {
+		type: String,
+		default: "Megumi's a fraud"
+	},
 	quote: {
 		type: String,
 		default: "te lo metto in culo con le cache"
 	},
-	linkedin_link:{
+	link:{
 		type: String,
 		default: "https://www.linkedin.com/in/giacomo-consani-82a33a2b2/"
 	}
@@ -20,11 +24,11 @@ defineProps({
 </script>
 
 <template>
-	<a :href="linkedin_link">
+	<a :href="link">
 		<div class="capoContainer">
 			<img :src="imgURL" alt="immagine">
 			<div class="capoTxtContainer">
-				<h1>{{nome}}</h1>
+				<h1>{{nome + " " + cognome}}</h1>
 				<p>"{{quote}}"</p>
 			</div>
 		</div>

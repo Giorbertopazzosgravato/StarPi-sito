@@ -4,11 +4,15 @@ defineProps({
 		type: String,
 		default: "The honoured one"
 	},
+	cognome: {
+		type: String,
+		default: "Megumi's a fraud",
+	},
 	imgURL: {
 		type: String,
 		default: new URL("/evil_car.gif", import.meta.url).href
 	},
-	linkedin_link: {
+	link: {
 		type: String,
 		default: "https://www.linkedin.com/in/giacomo-consani-82a33a2b2/"
 	}
@@ -16,11 +20,11 @@ defineProps({
 </script>
 
 <template>
-	<a :href="linkedin_link" class="PersonCardContainer">
+	<a :href="link" class="PersonCardContainer">
 		<div class="imgContainer">
 			<img :src="imgURL" alt="immagine">
 		</div>
-		<p class="PersonCardName">{{ nome }}</p>
+		<p class="PersonCardName">{{ nome + " " + cognome}}</p>
 	</a>
 </template>
 
