@@ -1,119 +1,111 @@
 <script setup>
 import NewsCard from "@/components/home_page/NewsLetter/NewsCard.vue";
-import {onMounted, ref} from "vue";
+import { onMounted, ref } from "vue";
 
 const newsContainer = ref(null);
 
 const news = ref([
-	{
-		image: "/car.gif",
-		title: "waaaaaaa",
-	},
-	{
-		image: "/car.gif",
-		title: "weeeeeee",
-	},
-	{
-		image: "/car.gif",
-		title: "wiiiiiii",
-	},
-	{
-
-	}
+	{ image: "/car.gif", title: "waaaaaaa" },
+	{ image: "/car.gif", title: "weeeeeee" },
+	{ image: "/car.gif", title: "wiiiiiii" },
+	{ image: "/car.gif", title: "wooooooo" } // Aggiunto titolo per evitare card vuote
 ]);
 
-async function fetch_news(){
-	try{
+async function fetch_news() {
+	try {
 		const response = await fetch("http://localhost:7878/database/please_server_I_need_this_my_news_is_kinda_homeless");
-		if(!response.ok){
+		if (!response.ok) {
 			throw new Error("my news are kinda homeless");
 		}
 		console.log("(=^･ω･^=) <-mao ")
 		const data = await response.json();
-		console.log("data: ", data);
 		news.value = data;
-
-	} catch(e){
+	} catch(e) {
 		console.log(e);
 	}
 }
 
-onMounted(()=>{
+onMounted(() => {
 	fetch_news();
 })
 
-
-function scrollLeft(){
-	if (newsContainer.value){
-		newsContainer.value.scrollBy({
-			left: -300,
-			behavior: "smooth"
-		})
+function scrollLeft() {
+	if (newsContainer.value) {
+		newsContainer.value.scrollBy({ left: -320, behavior: "smooth" });
 	}
 }
-function scrollRight(){
-	if (newsContainer.value){
-		newsContainer.value.scrollBy({
-			left: 300,
-			behavior: "smooth"
-		})
+function scrollRight() {
+	if (newsContainer.value) {
+		newsContainer.value.scrollBy({ left: 320, behavior: "smooth" });
 	}
 }
 </script>
 
 <template>
-	<div class="container">
-		<button @click="scrollLeft" class="left">&lt;</button>
-		<div class="newsContainer" ref="newsContainer">
-			<NewsCard v-for="card in news" :key = "card.title" :image = card.image :title=card.title class="newsCard"/>
+	<div class="carousel-wrapper">
+		<button @click="scrollLeft" class="nav-btn left-btn">&lt;</button>
+		
+		<div class="news-scroll-container" ref="newsContainer">
+			<NewsCard 
+				v-for="(card, index) in news" 
+				:key="index" 
+				:image="card.image" 
+				:title="card.title" 
+			/>
 		</div>
-		<button @click="scrollRight" class="right">&gt;</button>
+		
+		<button @click="scrollRight" class="nav-btn right-btn">&gt;</button>
 	</div>
 </template>
 
 <style scoped>
-.container{
-	position: relative;
-	max-width: fit-content;
-	max-height: fit-content;
-}
-.newsContainer{
+.carousel-wrapper {
 	display: flex;
-	background-color: rgba(28, 42, 106, 0.57);
-	max-width: 55vw;
-	overflow: scroll;
-	gap: 5vw;
-	border-radius: 40px;
-	padding: 2%;
-}
-button{
-	position: absolute;
-	/* width ; height */
-	width: 2vw;
-	height: 30vh;
-}
-.left{
-	top: 50%;
-	transform: translate(-100%, -50%);
-}
-.right{
-	right: 0;
-	top: 50%;
-	transform: translate(100%, -50%);
+	align-items: center;
+	justify-content: center;
+	gap: 15px;
+	width: 100%;
+	max-width: 1100px;
+	margin: 0 auto;
 }
 
-.newsContainer::-webkit-scrollbar{width: 10px; height: 50% }
-.newsContainer::-webkit-scrollbar-button{ display: none; }
-.newsContainer::-webkit-scrollbar-track{ display: none; }
-.newsContainer::-webkit-scrollbar-track-piece{ display: none; }
-.newsContainer::-webkit-scrollbar-thumb{ border-radius: 24px; background-color: rgba(0, 12, 38, 0.5); }
-.newsContainer::-webkit-scrollbar-corner{ display: none; }
-
-.newsCard{
-
+.news-scroll-container {
+	display: flex;
+	gap: 20px;
+	overflow-x: auto;
+	scroll-behavior: smooth;
+	padding: 20px 10px; /* Spazio per l'ombra dell'hover delle card */
+	
+	/* Nasconde la scrollbar ma mantiene lo scorrimento */
+	scrollbar-width: none; /* Firefox */
+	-ms-overflow-style: none; /* IE and Edge */
 }
-button{
+.news-scroll-container::-webkit-scrollbar {
+	display: none; /* Chrome, Safari and Opera */
+}
+
+.nav-btn {
+	background-color: rgba(255, 255, 255, 0.1);
+	border: 1px solid rgba(255, 255, 255, 0.2);
+	color: white;
+	font-size: 1.5rem;
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
 	flex-shrink: 0;
-	flex-grow: 0;
+	transition: all 0.3s ease;
+}
+
+.nav-btn:hover {
+	background-color: #E16038;
+	transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+	.nav-btn { display: none; } /* Su mobile nascondiamo i bottoni e si scorre col dito */
 }
 </style>

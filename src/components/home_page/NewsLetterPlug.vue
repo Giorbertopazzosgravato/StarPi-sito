@@ -1,48 +1,59 @@
 <script setup>
-
 import NewsContainer from "@/components/home_page/NewsLetter/NewsContainer.vue";
 import IscrizioneNewsLetter from "@/components/home_page/NewsLetter/IscrizioneNewsLetter.vue";
 </script>
 
 <template>
 	<div class="newsPlugContainer">
+		<h1 class="plug-title">LE ULTIME NEWS</h1>
 		<div class="NewsContainer">
-			<h1>LE ULTIME NEWS</h1>
 			<NewsContainer />
 		</div>
-		<hr style="margin-top: 5%; margin-bottom: 8%">
-		<IscrizioneNewsLetter/>
+		
+		<hr class="plug-separator">
+		
+		<div class="newsletter-wrapper">
+			<IscrizioneNewsLetter/>
+		</div>
 	</div>
 </template>
 
 <style scoped>
-.newsPlugContainer{
-	background-color: #29446E;
-	margin-left: auto;
-	margin-right: auto;
-	max-width: 80vw;
-	border-radius: 24px;
-	margin-top: 10vh;
-	height: fit-content;
-	padding-bottom: 1%;
+.newsPlugContainer {
+	background-color: #152845; /* Sfondo che si fonde meglio col main */
+	width: 95%;
+	max-width: 1200px;
+	margin: 80px auto;
+	border-radius: 40px;
+	padding: 40px 20px;
+	box-shadow: 0 10px 30px rgba(0,0,0,0.2);
 }
-.NewsContainer{
-	position: relative;
-	color: white;
-	margin-left: auto;
-	margin-right: auto;
-	max-width: fit-content;
-}
-h1{
-	transform: translate(0, 50%);
+
+.plug-title {
 	text-align: center;
-	font-size: 4em;
+	font-size: 2.5rem;
+	color: white;
+	margin: 0 0 30px 0;
 }
-@media (max-width: 1366px){
-	h1{
-		transform: translate(0, 50%);
-		text-align: center;
-		font-size: 3em;
-	}
+
+.NewsContainer {
+	color: white;
+	margin: 0 auto;
+	width: 100%;
+}
+
+.plug-separator {
+	width: 80%;
+	border: 0.5px solid rgba(255, 255, 255, 0.1);
+	margin: 40px auto;
+}
+
+.newsletter-wrapper {
+	width: 100%;
+}
+
+@media (min-width: 850px) {
+	.newsPlugContainer { padding: 60px 40px; border-radius: 50px; }
+	.plug-title { font-size: 3.5rem; margin-bottom: 50px; }
 }
 </style>

@@ -1,64 +1,75 @@
 <script setup>
-
 </script>
 
 <template>
-	<div class="presentazioneSettoreContainer">
-		<div class="image_container">
+	<div class="settore-card">
+		<div class="image-section">
 			<slot name="image">
-				<img src="/car.gif" alt="nessuna immagine passata">
+				<img src="/car.gif" alt="placeholder" class="settore-img">
 			</slot>
 		</div>
-		<div class="text_container">
-			<h1><b><slot name="titolo"></slot></b></h1>
-			<p><slot name="descrizione"></slot></p>
+		<div class="text-section">
+			<h1 class="title"><slot name="titolo"></slot></h1>
+			<p class="description"><slot name="descrizione"></slot></p>
 		</div>
 	</div>
-
 </template>
 
 <style scoped>
-	.presentazioneSettoreContainer{
-		left: 10%;
-		background-color: #29446E;
-		border-radius: 24px;
-		height: fit-content;
-		width: fit-content;
-		display: flex;
-		padding-top: 5%;
-		padding-bottom: 5%;
-		margin-bottom: 15%;
-	}
+.settore-card {
+  display: flex;
+  flex-direction: column;
+  width: 95%;
+  max-width: 1200px;
+  margin: 20px auto;
+  background-color: #1a1f2c; /* Stesso blu scuro di NewsCard */
+  border-radius: 40px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  color: white;
+}
 
-	.image_container{
-		display: block;
+.image-section { 
+  width: 100%; 
+  height: 250px; 
+}
 
-		margin-bottom: auto;
-		margin-top: auto;
-		margin-left: 3vw;
+.image-section :deep(img), .settore-img { 
+  width: 100%; 
+  height: 100%; 
+  display: block; 
+  object-fit: cover; 
+}
 
-		align-items: center;
-		justify-content: center;
-	}
-	.text_container{
-		//position: absolute;
-		margin-left: auto;
-		margin-right: 3vw;
-		display: block;
-	}
-	p{
-		background-color: #C82334;
-		width: 20vw;
-		font-size: 20px;
-	}
-	h1{
-		font-size: 32px;
-	}
-	/*img	{
+.text-section { 
+  width: 100%; 
+  padding: 30px; 
+  display: flex; 
+  flex-direction: column; 
+  justify-content: center; 
+}
 
-		object-fit: cover;
-		object-position: center;
-		flex-shrink: 0;
-	}*/
+.title { 
+  font-size: 2rem; 
+  margin: 0 0 15px 0; 
+  line-height: 1.2; 
+}
 
+.description { 
+  font-size: 1.1rem; 
+  color: #ccc; 
+  line-height: 1.5; 
+  margin: 0;
+}
+
+@media (min-width: 850px) {
+  .settore-card { 
+    flex-direction: row; 
+    height: 350px; 
+    border-radius: 50px; 
+  }
+  .image-section { width: 45%; height: 100%; }
+  .text-section { width: 55%; padding: 40px 60px; }
+  .title { font-size: 2.5rem; }
+}
 </style>
