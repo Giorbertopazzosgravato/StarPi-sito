@@ -63,19 +63,24 @@ function scrollRight(){
 
 <template>
 	<div class="container">
-		<button @click="scrollLeft" class="left">&lt;</button>
+		<button @click="scrollLeft" class="nav-button"><span>&#10094;</span></button>
 		<div class="newsContainer" ref="newsContainer">
 			<NewsCard v-for="card in news" :key = "card.title" :image = card.image :title=card.title class="newsCard"/>
 		</div>
-		<button @click="scrollRight" class="right">&gt;</button>
+		<button @click="scrollRight" class="nav-button"><span>&#10095;</span></button>
 	</div>
 </template>
 
 <style scoped>
 .container{
-	position: relative;
-	max-width: fit-content;
-	max-height: fit-content;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+    gap: 20px; 
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
 }
 .newsContainer{
 	display: flex;
@@ -86,20 +91,33 @@ function scrollRight(){
 	border-radius: 40px;
 	padding: 2%;
 }
-button{
-	position: absolute;
-	/* width ; height */
-	width: 2vw;
-	height: 30vh;
+
+.nav-button {
+    width: 50px;
+    height: 50px;
+    background: #0F1B31;
+    border: 2px solid #FF6200;
+    border-radius: 50%;
+    color: #FF6200;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
-.left{
-	top: 50%;
-	transform: translate(-100%, -50%);
+
+.nav-button:hover:not(.nav-button-disabled) {
+    background: #FF6200;
+    color: white;
+    transform: scale(1.1);
 }
-.right{
-	right: 0;
-	top: 50%;
-	transform: translate(100%, -50%);
+
+.nav-button-disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+    border-color: #555;
+    color: #555;
 }
 
 .newsContainer::-webkit-scrollbar{width: 10px; height: 50% }
@@ -109,9 +127,6 @@ button{
 .newsContainer::-webkit-scrollbar-thumb{ border-radius: 24px; background-color: rgba(0, 12, 38, 0.5); }
 .newsContainer::-webkit-scrollbar-corner{ display: none; }
 
-.newsCard{
-
-}
 button{
 	flex-shrink: 0;
 	flex-grow: 0;
