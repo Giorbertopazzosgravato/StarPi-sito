@@ -157,6 +157,7 @@
   width: 100%;
   padding-top: 20px;
 }
+
 .YearDisplay {
   display: flex;
   align-items: center;

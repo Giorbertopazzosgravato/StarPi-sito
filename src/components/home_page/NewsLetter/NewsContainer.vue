@@ -1,111 +1,134 @@
 <script setup>
 import NewsCard from "@/components/home_page/NewsLetter/NewsCard.vue";
-import { onMounted, ref } from "vue";
+import {onMounted, ref} from "vue";
 
 const newsContainer = ref(null);
 
 const news = ref([
-	{ image: "/car.gif", title: "waaaaaaa" },
-	{ image: "/car.gif", title: "weeeeeee" },
-	{ image: "/car.gif", title: "wiiiiiii" },
-	{ image: "/car.gif", title: "wooooooo" } // Aggiunto titolo per evitare card vuote
+	{
+		image: "/car.gif",
+		title: "waaaaaaa",
+	},
+	{
+		image: "/car.gif",
+		title: "weeeeeee",
+	},
+	{
+		image: "/car.gif",
+		title: "wiiiiiii",
+	},
+	{
+
+	}
 ]);
 
-async function fetch_news() {
-	try {
+async function fetch_news(){
+	try{
 		const response = await fetch("http://localhost:7878/database/please_server_I_need_this_my_news_is_kinda_homeless");
-		if (!response.ok) {
+		if(!response.ok){
 			throw new Error("my news are kinda homeless");
 		}
 		console.log("(=^･ω･^=) <-mao ")
 		const data = await response.json();
+		console.log("data: ", data);
 		news.value = data;
-	} catch(e) {
+
+	} catch(e){
 		console.log(e);
 	}
 }
 
-onMounted(() => {
+onMounted(()=>{
 	fetch_news();
 })
 
-function scrollLeft() {
-	if (newsContainer.value) {
-		newsContainer.value.scrollBy({ left: -320, behavior: "smooth" });
+
+function scrollLeft(){
+	if (newsContainer.value){
+		newsContainer.value.scrollBy({
+			left: -300,
+			behavior: "smooth"
+		})
 	}
 }
-function scrollRight() {
-	if (newsContainer.value) {
-		newsContainer.value.scrollBy({ left: 320, behavior: "smooth" });
+function scrollRight(){
+	if (newsContainer.value){
+		newsContainer.value.scrollBy({
+			left: 300,
+			behavior: "smooth"
+		})
 	}
 }
 </script>
 
 <template>
-	<div class="carousel-wrapper">
-		<button @click="scrollLeft" class="nav-btn left-btn">&lt;</button>
-		
-		<div class="news-scroll-container" ref="newsContainer">
-			<NewsCard 
-				v-for="(card, index) in news" 
-				:key="index" 
-				:image="card.image" 
-				:title="card.title" 
-			/>
+	<div class="container">
+		<button @click="scrollLeft" class="nav-button"><span>&#10094;</span></button>
+		<div class="newsContainer" ref="newsContainer">
+			<NewsCard v-for="card in news" :key = "card.title" :image = card.image :title=card.title class="newsCard"/>
 		</div>
-		
-		<button @click="scrollRight" class="nav-btn right-btn">&gt;</button>
+		<button @click="scrollRight" class="nav-button"><span>&#10095;</span></button>
 	</div>
 </template>
 
 <style scoped>
-.carousel-wrapper {
+.container{
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	gap: 15px;
-	width: 100%;
-	max-width: 1100px;
-	margin: 0 auto;
+    gap: 20px; 
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+.newsContainer{
+	display: flex;
+	background-color: rgba(28, 42, 106, 0.57);
+	max-width: 55vw;
+	overflow: scroll;
+	gap: 5vw;
+	border-radius: 40px;
+	padding: 2%;
 }
 
-.news-scroll-container {
-	display: flex;
-	gap: 20px;
-	overflow-x: auto;
-	scroll-behavior: smooth;
-	padding: 20px 10px; /* Spazio per l'ombra dell'hover delle card */
-	
-	/* Nasconde la scrollbar ma mantiene lo scorrimento */
-	scrollbar-width: none; /* Firefox */
-	-ms-overflow-style: none; /* IE and Edge */
-}
-.news-scroll-container::-webkit-scrollbar {
-	display: none; /* Chrome, Safari and Opera */
+.nav-button {
+    width: 50px;
+    height: 50px;
+    background: #0F1B31;
+    border: 2px solid #FF6200;
+    border-radius: 50%;
+    color: #FF6200;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.nav-btn {
-	background-color: rgba(255, 255, 255, 0.1);
-	border: 1px solid rgba(255, 255, 255, 0.2);
-	color: white;
-	font-size: 1.5rem;
-	width: 50px;
-	height: 50px;
-	border-radius: 50%;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	cursor: pointer;
+.nav-button:hover:not(.nav-button-disabled) {
+    background: #FF6200;
+    color: white;
+    transform: scale(1.1);
+}
+
+.nav-button-disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+    border-color: #555;
+    color: #555;
+}
+
+.newsContainer::-webkit-scrollbar{width: 10px; height: 50% }
+.newsContainer::-webkit-scrollbar-button{ display: none; }
+.newsContainer::-webkit-scrollbar-track{ display: none; }
+.newsContainer::-webkit-scrollbar-track-piece{ display: none; }
+.newsContainer::-webkit-scrollbar-thumb{ border-radius: 24px; background-color: rgba(0, 12, 38, 0.5); }
+.newsContainer::-webkit-scrollbar-corner{ display: none; }
+
+button{
 	flex-shrink: 0;
-	transition: all 0.3s ease;
-}
-
-.nav-btn:hover {
-	background-color: #E16038;
-	transform: scale(1.1);
-}
-
-@media (max-width: 768px) {
-	.nav-btn { display: none; } /* Su mobile nascondiamo i bottoni e si scorre col dito */
+	flex-grow: 0;
 }
 </style>
