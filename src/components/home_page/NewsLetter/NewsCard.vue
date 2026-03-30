@@ -7,15 +7,20 @@ defineProps({
 	title: {
 		type: String,
 		default: "plrrrrr",
+	},
+	link: {
+		type: String,
+		default: "",
 	}
 })
 </script>
 
 <template>
-<div class="container2">
+
+<a class="container2" :href="link">
 	<img :src="image" alt="immagine" class="image">
 	<h1>{{ title }}</h1>
-</div>
+</a>
 </template>
 
 <style scoped>

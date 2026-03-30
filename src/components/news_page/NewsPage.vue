@@ -41,13 +41,16 @@ onMounted(()=>{
     <div class="news-feed">
       <template v-for="(news, index) in newsList" :key="index">
         <div class="feed-item">
-          <NewsCard
-            :titolo="news.titolo"
-            :descrizione="news.descrizione"
-            :imageURL="news.imageURL"
-            :categoria="news.categoria"
-            :image_goes_left="index % 2 === 0"
-          />
+			<a :href="news.link">
+				<NewsCard
+					:titolo="news.titolo"
+					:descrizione="news.descrizione"
+					:imageURL="news.imageURL"
+					:categoria="news.categoria"
+					:image_goes_left="index % 2 === 0"
+				/>
+			</a>
+
         </div>
 
         <div v-if="index === 1" class="feed-item">
