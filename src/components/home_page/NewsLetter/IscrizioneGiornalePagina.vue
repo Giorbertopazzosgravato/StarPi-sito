@@ -13,7 +13,7 @@
 
   <div style="text-align: center; color: antiquewhite">
   <h1>
-    ! Grazzie per essereti iscritto al giornale !
+    ! Grazie per esserti iscritto al giornale !
   </h1>
   <h1>
     Da questo momento sarai aggiornato delle ultime novità via mail
