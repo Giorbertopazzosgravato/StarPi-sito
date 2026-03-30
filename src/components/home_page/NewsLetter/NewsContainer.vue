@@ -65,7 +65,8 @@ function scrollRight(){
 	<div class="container">
 		<button @click="scrollLeft" class="nav-button"><span>&#10094;</span></button>
 		<div class="newsContainer" ref="newsContainer">
-			<NewsCard v-for="card in news" :key = "card.title" :image = card.image :title=card.title class="newsCard"/>
+
+			<NewsCard v-for="card in news" :key = "card.title" :image = card.image :title=card.title class="newsCard" :link="card.link"/>
 		</div>
 		<button @click="scrollRight" class="nav-button"><span>&#10095;</span></button>
 	</div>
