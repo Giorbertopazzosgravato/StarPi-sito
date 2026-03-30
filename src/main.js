@@ -11,20 +11,21 @@ import LogIn       from "@/components/Utenza/LogIn.vue";
 import sponsors     from "@/components/sponsor/sponsor.vue";
 import utenza from "@/components/Utenza/Utente/AreaPrivata.vue";
 import amministrazione from "@/components/Utenza/Ammi/Amministrazione.vue";
-
+import IscrizioneGiornale from "@/components/home_page/NewsLetter/IscrizioneGiornalePagina.vue";
 const routes = [
-    {path: "/",                redirect:  "/home"      },
-    {path: "/home",            component: HomePage     },
-    {path: "/news",            component: NewsPage     },
-    {path: "/team",            redirect:  "/team/2025" },
-    {path: "/team/:pathMatch(\\d{4})",            component: TeamPage     , props:true},
-    {path: "/progetti",        component: ProgettiPage },
-    {path: "/sponsor",         component: sponsors     },
-    {path: "/login",                    component: LogIn,          props:false},
-    {path: "/AreaPrivata",              component: utenza,          props:false},
-    {path: "/AreaPrivata/:pathMatch(.*)",              component: utenza,          props:true},
-    {path: "/Master",                   component: amministrazione, props:false},
-    {path: '/:pathMatch(.*)',  component: NotFound     }
+    {path: "/",                            redirect: "/home",            props:false },
+    {path: "/home",                       component: HomePage,           props:false },
+    {path: "/news",                       component: NewsPage,           props:false },
+    {path: "/team",                       redirect:  "/team/2025",       props:false },
+    {path: "/team/:pathMatch(\\d{4})",    component: TeamPage,           props:true  },
+    {path: "/progetti",                   component: ProgettiPage,       props:false },
+    {path: "/sponsor",                    component: sponsors,           props:false },
+    {path: "/login",                      component: LogIn,              props:false },
+    {path: "/AreaPrivata",                component: utenza,             props:false },
+    {path: "/AreaPrivata/:pathMatch(.*)", component: utenza,             props:true  },
+    {path: "/Master",                     component: amministrazione,    props:false },
+    {path: "/IscrizioneGiornale",         component: IscrizioneGiornale, props:false },
+    {path: '/:pathMatch(.*)',             component: NotFound,           props:false }
 ]
 
 const router = createRouter({

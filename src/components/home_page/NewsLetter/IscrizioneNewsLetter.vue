@@ -3,7 +3,7 @@
 </script>
 
 <template>
-	<form action="/home" class="container" method="post">
+	<form action="/IscrizioneGiornale" class="container" method="post">
 		<h1>Ti piace quello che vedi? Iscriviti alla newsletter!</h1>
 		<div>
 			<input type="text" name="nome" id="nome" class="input txt" placeholder="nome">
