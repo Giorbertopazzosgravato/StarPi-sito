@@ -11,6 +11,8 @@
   <br>
   <br>
 
+  <meta http-equiv="refresh" content="10;url=/">
+
   <div style="text-align: center; color: antiquewhite">
   <h1>
     ! Grazie per esserti iscritto al giornale !
