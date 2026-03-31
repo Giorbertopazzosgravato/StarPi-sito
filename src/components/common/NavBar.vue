@@ -217,7 +217,7 @@ const navLinks = [
    ========================================== */
 .hamburger-btn {
   position: fixed; top: 15px; left: 20px; font-size: 32px;
-  background: none; border: none; color: #DCA74B;
+  background: none; border: none; color: #E04814;
   cursor: pointer; z-index: 9998;
 }
 
