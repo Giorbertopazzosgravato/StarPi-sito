@@ -49,8 +49,8 @@
         <h3 class="footer-title">Lavora con noi</h3>
         <ul class="footer-links">
           <li><a href="/posizioni-aperte">Posizioni aperte</a></li>
-          <li><a href="mailto:info.desk@starpi.it">info@starpi.eu</a></li>
-          <li class="info-text">commercial@starpi.eu</li>
+          <li><a href="mailto:info.desk@starpi.it">info@starpi.eu </a></li>
+          <li class="info-text">commercial@starpi.eu </li>
           <li><a href="/contatti">Modulo contatti</a></li>
         </ul>
       </div>
