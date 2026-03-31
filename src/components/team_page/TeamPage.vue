@@ -30,24 +30,24 @@
 	  }
   )
   const teams = ref([{
-	  dipartimento : "Pisellino corto corto",
+	  dipartimento : "Sconosciuto",
 	  capo: {
 		  nome: "Giacomo",
 		  cognome: "Consani",
 		  ruolo: "chief",
-		  link: "https://pornhub.com",
+		  link: "",
 	  },
 	  persone:[
 		  {
 			  nome: "Riccardo",
 			  cognome: "scaletta",
-			  link: "https://pornhub.com",
+			  link: "",
 			  imgURL: "car.gif"
 		  },
 		  {
 			  nome: "Mattia",
 			  cognome: "Drogo",
-			  link: "https://pornhub.com",
+			  link: "",
 			  imgURL: "car.gif"
 		  }
 	  ]

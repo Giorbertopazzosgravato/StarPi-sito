@@ -30,7 +30,7 @@
 
   onMounted(() => {
     // start at bottom
-    y.value = window.innerHeight - 900
+    y.value = -window.innerHeight/50
 
     startSequence()
   })
@@ -46,6 +46,9 @@
   <br>
 
   <meta http-equiv="refresh" content="12;url=/">
+
+
+
   <div class="container">
     <div style="text-align: center; color: antiquewhite">
       <h1>
@@ -64,10 +67,6 @@
       </div>
     </div>
 
-
-
-
-
     <!-- countdown display -->
     <div class="countdown">
       <h1> {{ countdown }} </h1>
@@ -76,13 +75,13 @@
     <!-- image -->
     <img
         src="/Giornale/Razzo.png"
-        class="img"
-        :style="{ transform: `translateY(${y-55}px)` }"
+        class="razzo"
+        :style="{ transform: `translateY(${y-50}px)` }"
     />
     <img
         v-if="isMoving"
         src="/Giornale/Fuoco.png"
-        class="img"
+        class="fuoco"
         :style="{ transform: `translateY(${y}px)` }"
     />
 
@@ -99,13 +98,19 @@
   overflow: hidden;
 }
 
-.img {
+.razzo {
   position: absolute;
   bottom: 0;
   left: 10%;
-  transform: translateX(-50%);
+  transform: translateX(+30%);
 }
 
+.fuoco {
+  position: absolute;
+  bottom: 0;
+  left: 13%;
+  transform: translateX(0%);
+}
 
 .countdown {
   text-align: center;
