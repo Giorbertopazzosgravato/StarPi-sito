@@ -13,7 +13,7 @@ import utenza from "@/components/Utenza/Utente/AreaPrivata.vue";
 import amministrazione from "@/components/Utenza/Ammi/Amministrazione.vue";
 import IscrizioneGiornale from "@/components/home_page/NewsLetter/IscrizioneGiornalePagina.vue";
 const routes = [
-    {path: "/",                            redirect: "/home",            props:false },
+    {path: "/",                           redirect:  "/home",            props:false },
     {path: "/home",                       component: HomePage,           props:false },
     {path: "/news",                       component: NewsPage,           props:false },
     {path: "/team",                       redirect:  "/team/2025",       props:false },

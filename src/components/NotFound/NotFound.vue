@@ -1,50 +1,45 @@
 <script setup>
-  import { ref, onMounted } from 'vue'
+import { ref, onMounted } from 'vue'
+import background from "three/src/renderers/common/Background.js";
 
-  const y = ref(0)              // vertical position
+const y = ref(0)
+const slide = ref(null)
 
+let momento = 0;
+function animate() {
+  const value = Number(slide.value?.value || 0)
+  console.log("M : " + momento)
+ console.log("Y : " + y.value);
 
-    function sleep(ms) {
-      return new Promise(r => setTimeout(r, ms))
+  momento += 0.3 - (value)*0.034;
+
+  if (y.value >= (window.innerHeight/2.25)) {
+    if(momento > 0) {
+      momento = 0;
+      y.value = (window.innerHeight/2.25);
     }
-
-    async function startSequence() {
-      // countdown phase
-      animate()
-    }
-
-    function animate() {
-      console.log(slide.value);
-      y.value -= slide.value
-      if(y.value >= window.innerHeight - 900) {
-        y.value -= 2;
-      }
-      if (y.value > -window.innerHeight + 10) {
-        window.location.replace("/");
-      }
-      requestAnimationFrame(animate);
-    }
-
-    onMounted(() => {
-      // start at bottom
-      y.value = window.innerHeight - 900
+  }
 
 
-   //   while(true) {
-        const slider = document.getElementById("putenza")
-        console.log(slider.value)
+  y.value += momento;
 
-        sleep(1000);//
-    //  }
+  if (y.value < ((-window.innerHeight*1.2))) {
+    window.location.replace("/")
+    console.log("Vai via")
+  }
 
-      startSequence()
-    })
+  requestAnimationFrame(animate)
+}
 
-
-
-
-
+onMounted(() => {
+  y.value = window.innerHeight/2.25
+  animate()
+})
 </script>
+
+
+
+
 
 <template>
   <br>
@@ -58,37 +53,43 @@
 
 
   <div>
-    <div style="text-align: center">
+    <div style="text-align: center; color: aliceblue;">
+      <!--
       <h1> Ma che stai a di fra no davvero FR la pagina un c'è </h1>
+      -->
+      <h1 style="font-size: 7ex"> Impossibile trovare la pagina richiesta </h1>
       <h2 > →→    trascina per tornare alla home   →→ </h2>
-      <input type="range" id="putenza" name="putenza" min="0" max="10" value="0" />
+      <input ref="slide" type="range" min="0" max="10" value="0" />
       <br>
       <br>
       <br>
       <br>
       <br>
       <br>
-      <router-link to="/home" style="color: #FF6200"> clicca qui per tornare alla pagina principale </router-link>
+      <router-link to="/home" style="color: #FF6200; font-size: 3ex"> Oppure clicca qui per tornare alla pagina principale </router-link>
     </div>
-
   </div>
-
-
 
 
   <div>
     <img
         src="/Giornale/Razzo.png"
         class="img"
-        :style="{ transform: `translateY(${y-55}px)` }"
+        :style="{ transform: `translateY(${y}px)` }"
     />
   </div>
 
 
+</template>
 
-  </template>
+<style scoped>
+  .img {
+    scale: 45%;
+  }
 
-
-
-  <style scoped>
-  </style>
+  .terreno {
+    width: 100%;
+    height: 10%;
+    background-color: darkgreen;
+  }
+</style>
