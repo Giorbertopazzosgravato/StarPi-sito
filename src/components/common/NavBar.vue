@@ -118,7 +118,7 @@ const navLinks = [
   position: fixed;
   top: 0; left: 0; width: 100%;
   z-index: 9999;
-  background-color: rgba(33, 49, 82, 0.95);
+  background-color: #1D2E4D;
   backdrop-filter: blur(8px); 
   transition: transform 0.4s ease;
   border-bottom: 1px solid rgba(255, 255, 255, 0.05); 
@@ -180,7 +180,7 @@ const navLinks = [
   content: '';
   position: absolute;
   bottom: -5px; left: 0; width: 0; height: 2px;
-  background-color: #E16038;
+  background-color: #E04814;
   transition: width 0.3s ease;
 }
 
@@ -196,7 +196,7 @@ const navLinks = [
 }
 
 .login-btn:hover {
-  border-color: #E16038;
+  border-color: #E04814;
   background-color: rgba(225, 96, 56, 0.1);
 }
 
@@ -233,7 +233,7 @@ const navLinks = [
 
 .sidebar {
   position: fixed; top: 0; left: 0; width: 300px; height: 100vh;
-  background-color: #213152; 
+  background-color: #1D2E4D;
   transform: translateX(-100%); 
   transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
   z-index: 10000; padding: 40px; display: flex; flex-direction: column;
@@ -254,7 +254,7 @@ const navLinks = [
 
 .active-link-mobile { 
   color: white; 
-  border-left: 3px solid #E16038; 
+  border-left: 3px solid #E04814;
   padding-left: 10px; 
 }
 
@@ -264,5 +264,5 @@ const navLinks = [
   margin: 10px 0; 
 }
 
-.login-mobile { color: #E16038; }
+.login-mobile { color: #E04814; }
 </style>

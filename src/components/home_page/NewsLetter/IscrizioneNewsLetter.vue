@@ -39,7 +39,7 @@
 	margin-right: auto;
 	font-size: 1.3em;
 	border-radius: 10px;
-	border: solid #E16038;
+	border: solid #E04814;
 	background-color: #B8B8B8;
 }
 h1{

@@ -101,7 +101,7 @@ const isExternal = (url) => url.startsWith('http');
 .indicator {
   width: 0;
   height: 3px;
-  background-color: #E16038;
+  background-color: #E04814;
   margin: 8px auto 0;
   border-radius: 2px;
   transition: width 0.3s ease;
