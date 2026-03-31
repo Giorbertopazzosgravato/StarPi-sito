@@ -91,12 +91,12 @@ watch(current_index, () => {
         </div>
 
         <div class="nav-container">
-            <button 
-                class="nav-button" 
+            <button
+                class="nav-button"
                 @click="prev_card"
                 :class="{'nav-button-disabled': current_index === 0}"
             >
-                <span>&#10094;</span> 
+                <span>&#10094;</span>
             </button>
 
             <div class="counter-display">
@@ -105,8 +105,8 @@ watch(current_index, () => {
                 <span class="counter-number">{{ cards.length }}</span>
             </div>
 
-            <button 
-                class="nav-button" 
+            <button
+                class="nav-button"
                 @click="next_card"
                 :class="{'nav-button-disabled': current_index === cards.length - 1}"
             >
@@ -193,9 +193,9 @@ watch(current_index, () => {
 
 /* Custom Scrollbar */
 .scrollable_text::-webkit-scrollbar { width: 6px; }
-.scrollable_text::-webkit-scrollbar-thumb { 
-    background: rgba(255, 98, 0, 0.3); 
-    border-radius: 10px; 
+.scrollable_text::-webkit-scrollbar-thumb {
+    background: rgba(255, 98, 0, 0.3);
+    border-radius: 10px;
 }
 
 /* --- NAVIGAZIONE --- */
