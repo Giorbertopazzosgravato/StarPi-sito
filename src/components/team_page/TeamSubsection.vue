@@ -71,7 +71,7 @@ defineProps({
 				/>
 			</div>
 		</div>
-		<hr style="width: 95vw; border-color: #FF6200; margin-top: 5%">
+		<hr style="width: 95vw; border-color: white; margin-top: 5%">
 	</div>
 
 </template>

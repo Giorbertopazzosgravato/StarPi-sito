@@ -34,8 +34,8 @@ div {
 
 .default:hover {
   background-color: rgba(45, 76, 122, 0.2);
-  border-top: 9px solid #E16038;
-  border-bottom: 9px solid #E16038;
+  border-top: 9px solid #E04814;
+  border-bottom: 9px solid #E04814;
 }
 
 .active {
@@ -58,8 +58,8 @@ div {
   }
   
   .default:hover {
-    border-top: 4px solid #E16038;
-    border-bottom: 4px solid #E16038;
+    border-top: 4px solid #E04814;
+    border-bottom: 4px solid #E04814;
   }
   
   .active {

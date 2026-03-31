@@ -1,3 +1,5 @@
+<script setup>
+</script>
 <template>
   <div class="newsletter-box">
     <div class="newsletter-header">
@@ -55,14 +57,14 @@
 .n-input {
   padding: 15px;
   border-radius: 12px;
-  border: 2px solid #E16038;
+  border: 2px solid #E04814;
   background: #B8B8B8;
   font-size: 1rem;
 }
 
 .n-btn {
   padding: 15px;
-  background-color: #E16038;
+  background-color: #E04814;
   color: white;
   border: none;
   border-radius: 12px;
