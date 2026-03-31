@@ -92,7 +92,7 @@
 
 </template>
 
-<style>
+<style scoped>
 .container {
   position: relative;
   height: 70vh;
