@@ -30,12 +30,12 @@
       y.value = window.innerHeight - 900
 
 
-      while(true) {
+      /*while(true) {
         const slider = document.getElementById("putenza")
         console.log(slider.value)
 
         sleep(1000);
-      }
+      }*/
 
       startSequence()
     })
@@ -61,7 +61,7 @@
     <div style="text-align: center">
       <h1> Ma che stai a di fra no davvero FR la pagina un c'è </h1>
       <h2 > →→    trascina per tornare alla home   →→ </h2>
-      <input type="range" id="putenza" name="putenza" min="0" max="10" value="0" />
+      <!--<input type="range" id="putenza" name="putenza" min="0" max="10" value="0" /> <-->
       <br>
       <br>
       <br>
@@ -76,13 +76,7 @@
 
 
 
-  <div>
-    <img
-        src="/Giornale/Razzo.png"
-        class="img"
-        :style="{ transform: `translateY(${y-55}px)` }"
-    />
-  </div>
+
 
 
 
