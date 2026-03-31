@@ -30,12 +30,12 @@
       y.value = window.innerHeight - 900
 
 
-      while(true) {
+   //   while(true) {
         const slider = document.getElementById("putenza")
         console.log(slider.value)
 
-        sleep(1000);
-      }
+        sleep(1000);//
+    //  }
 
       startSequence()
     })
