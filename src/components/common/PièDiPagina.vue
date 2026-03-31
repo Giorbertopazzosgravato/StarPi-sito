@@ -222,7 +222,7 @@
 }
 
 .newsletter-form button:hover {
-  background-color: #E04814;
+  background-color: #f36d3c;
 }
 
 @media (max-width: 1560px) {

@@ -73,7 +73,7 @@
   transition: background 0.3s;
 }
 
-.n-btn:hover { background-color: #DCA74B; }
+.n-btn:hover { background-color: #f36d3c; }
 
 @media (min-width: 850px) {
   .newsletter-box { border-radius: 50px; }
