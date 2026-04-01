@@ -24,7 +24,7 @@ const news = ref([
 
 async function fetch_news(){
 	try{
-		const response = await fetch("http://localhost:7878/database/please_server_I_need_this_my_news_is_kinda_homeless");
+		const response = await fetch("/database/please_server_I_need_this_my_news_is_kinda_homeless");
 		if(!response.ok){
 			throw new Error("my news are kinda homeless");
 		}

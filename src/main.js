@@ -6,7 +6,7 @@ import HomePage     from "@/components/home_page/HomePage.vue";
 import NewsPage     from "@/components/news_page/NewsPage.vue";
 import TeamPage     from "@/components/team_page/TeamPage.vue";
 import ProgettiPage from "@/components/progetti_page/ProgettiPage.vue";
-import NotFound     from "@/components/NotFound/NotFound.vue";
+import ContactUs     from "@/components/ContactUs/ContactUs.vue";
 import LogIn       from "@/components/Utenza/LogIn.vue";
 import sponsors     from "@/components/sponsor/sponsor.vue";
 import utenza from "@/components/Utenza/Utente/AreaPrivata.vue";
@@ -25,7 +25,7 @@ const routes = [
     {path: "/AreaPrivata/:pathMatch(.*)", component: utenza,             props:true  },
     {path: "/Master",                     component: amministrazione,    props:false },
     {path: "/IscrizioneGiornale",         component: IscrizioneGiornale, props:false },
-    {path: '/:pathMatch(.*)',             component: NotFound,           props:false }
+    {path: '/:pathMatch(.*)',             component: ContactUs,           props:false }
 ]
 
 const router = createRouter({
