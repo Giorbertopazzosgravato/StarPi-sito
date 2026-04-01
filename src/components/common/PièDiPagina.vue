@@ -184,7 +184,7 @@
 }
 
 .footer-links a:hover {
-  color: #DCA74B;
+  color: #E04814;
 }
 
 /* ==========================================
@@ -212,7 +212,7 @@
 
 .newsletter-form button {
   padding: 12px 20px;
-  background-color: #E16038;
+  background-color: #E04814;
   color: white;
   border: none;
   font-weight: bold;
@@ -222,7 +222,7 @@
 }
 
 .newsletter-form button:hover {
-  background-color: #DCA74B;
+  background-color: #f36d3c;
 }
 
 @media (max-width: 1560px) {
@@ -252,13 +252,13 @@
 }
 
 .footer-bottom a {
-  color: #DCA74B;
+  color: #E04814;
   text-decoration: none;
   transition: color 0.3s ease;
 }
 
 .footer-bottom a:hover {
-  color: #E16038;
+  color: #E04814;
 }
 
 /* ==========================================

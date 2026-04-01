@@ -212,9 +212,9 @@ watch(current_index, () => {
     width: 50px;
     height: 50px;
     background: #0F1B31;
-    border: 2px solid #FF6200;
+    border: 2px solid #E04814;
     border-radius: 50%;
-    color: #FF6200;
+    color: #E04814;
     font-size: 1.2rem;
     cursor: pointer;
     transition: all 0.3s ease;
@@ -224,7 +224,7 @@ watch(current_index, () => {
 }
 
 .nav-button:hover:not(.nav-button-disabled) {
-    background: #FF6200;
+    background: #E04814;
     color: white;
     transform: scale(1.1);
 }
@@ -247,7 +247,7 @@ watch(current_index, () => {
 }
 
 .counter-number {
-    color: #FF6200;
+    color: #E04814;
     font-size: 1.8rem;
     font-weight: bold;
 }

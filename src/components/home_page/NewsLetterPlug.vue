@@ -9,31 +9,20 @@ import IscrizioneNewsLetter from "@/components/home_page/NewsLetter/IscrizioneNe
 		<div class="NewsContainer">
 			<NewsContainer />
 		</div>
-		
-		<hr class="plug-separator">
-		
-		<div class="newsletter-wrapper">
-			<IscrizioneNewsLetter/>
-		</div>
+		<IscrizioneNewsLetter/>
 	</div>
 </template>
 
 <style scoped>
-.newsPlugContainer {
-	background-color: #152845; /* Sfondo che si fonde meglio col main */
-	width: 95%;
-	max-width: 1200px;
-	margin: 80px auto;
-	border-radius: 40px;
-	padding: 40px 20px;
-	box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-}
-
-.plug-title {
-	text-align: center;
-	font-size: 2.5rem;
-	color: white;
-	margin: 0 0 30px 0;
+.newsPlugContainer{
+	background-color: #29446E;
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 80vw;
+	border-radius: 24px;
+	margin-top: 10vh;
+	height: fit-content;
+	padding-bottom: 4%;
 }
 
 .NewsContainer {
@@ -50,6 +39,16 @@ import IscrizioneNewsLetter from "@/components/home_page/NewsLetter/IscrizioneNe
 
 .newsletter-wrapper {
 	width: 100%;
+}
+
+.plug-title {
+	color: #FFFFFF;
+	text-align: center;
+	font-size: 2.5rem;
+	margin-top: 40px;
+	margin-bottom: 20px;
+	font-family: 'Nasalization';
+	font-weight: 400;
 }
 
 @media (min-width: 850px) {

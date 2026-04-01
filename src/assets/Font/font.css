@@ -1,0 +1,33 @@
+/* --- Nasalization (OTF) --- */
+@font-face {
+  font-family: 'Nasalization';
+  src: url('@/assets/Font/nasalization/Nasalization rg.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* --- Inter (TTF) --- */
+@font-face {
+  font-family: 'Inter';
+  src: url('@/assets/Font/Inter/Inter-VariableFont_opsz,wght.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('@/assets/Font/Inter/Inter-Italic-VariableFont_opsz,wght.ttf') format('truetype');
+  font-weight: 400;
+  font-style: italic; 
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('@/assets/Font/Inter/static/Inter_18pt-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal; /* "bold" non esiste qui, si usa 700 nel weight */
+  font-display: swap;
+}

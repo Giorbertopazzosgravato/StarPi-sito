@@ -30,24 +30,24 @@
 	  }
   )
   const teams = ref([{
-	  dipartimento : "Pisellino corto corto",
+	  dipartimento : "Sconosciuto",
 	  capo: {
 		  nome: "Giacomo",
 		  cognome: "Consani",
 		  ruolo: "chief",
-		  link: "https://pornhub.com",
+		  link: "",
 	  },
 	  persone:[
 		  {
 			  nome: "Riccardo",
 			  cognome: "scaletta",
-			  link: "https://pornhub.com",
+			  link: "",
 			  imgURL: "car.gif"
 		  },
 		  {
 			  nome: "Mattia",
 			  cognome: "Drogo",
-			  link: "https://pornhub.com",
+			  link: "",
 			  imgURL: "car.gif"
 		  }
 	  ]
@@ -173,7 +173,7 @@
 .Yeartext {
   font-size: 1.8rem;
   font-weight: 800;
-  color: #FF6200;
+  color: #E04814;
 }
 
 .YearSeparator {
@@ -189,9 +189,9 @@
   width: 45px;
   height: 45px;
   background: rgba(15, 27, 49, 0.8);
-  border: 2px solid #FF6200;
+  border: 2px solid #E04814;
   border-radius: 50%;
-  color: #FF6200;
+  color: #E04814;
   text-decoration: none;
   font-size: 1.2rem;
   font-weight: bold;
@@ -200,7 +200,7 @@
 }
 
 .YearNavButton:hover {
-  background: #FF6200;
+  background: #E04814;
   color: white;
   transform: scale(1.1);
 }
