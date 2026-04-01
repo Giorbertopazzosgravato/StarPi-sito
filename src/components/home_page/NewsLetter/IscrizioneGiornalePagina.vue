@@ -2,7 +2,7 @@
   import { ref, onMounted } from 'vue'
 
   const y = ref(0)              // vertical position
-  const countdown = ref(9)      // seconds
+  const countdown = ref(2)      // seconds
   const isMoving = ref(false)
 
   function sleep(ms) {

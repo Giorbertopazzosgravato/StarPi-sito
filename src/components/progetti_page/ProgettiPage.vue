@@ -4,14 +4,14 @@ import ProjectCard from "@/components/progetti_page/ProjectCard.vue";
 
 // Dati aggiornati con i percorsi corretti delle tue immagini
 const progetti = ref([
-  { 
-    title: "Rockery Team", 
-    img: "/progetti_page/rockery_logo.jpg", 
-    link: "/progetti/rockery" 
-  },
+  // {
+  //   title: "Rockery Team",
+  //   img: "/progetti_page/rockery_logo.jpg",
+  //   link: "/progetti/rockery"
+  // },
   { 
     title: "Leaning project", 
-    img: "/progetti_page/leaning_logo.jpg", 
+    img: "/progetti_page/leaning_project.png",
     link: "https://www.leaningproject.it/" /* Link diretto esterno */
   },
 ]);
@@ -21,7 +21,7 @@ const progetti = ref([
   <div class="page-container">
     <div class="header-logo-container">
       <img 
-        src="/progetti_page/progetti_logo.png" 
+        src="/progetti_page/progetti_logo.png"
         alt="StarPi Progetti" 
         class="top-logo"
       >

@@ -7,12 +7,15 @@
         <div class="text-content">
             <h1><b>IL NOSTRO OBIETTIVO</b></h1>
             <p>
-                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting,
-                remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+				In StarPi non ci accontentiamo di studiare l'aerospazio sui libri; abbiamo deciso di costruirlo. Siamo un gruppo di studenti dell’Università di Pisa che ha scelto di trasformare la teoria in metallo, fibra di carbonio e propellente. La nostra missione non finisce tra le mura di un laboratorio: punta dritta ai cieli del Portogallo per la European Rocketry Challenge (EuRoC).
+				<br>
+				<br>Progettare un razzo significa far dialogare discipline diverse — dall'elettronica di bordo alla fluidodinamica, dalla meccanica strutturale alla logistica — con un unico margine di errore: lo zero. Ogni vite che stringiamo e ogni riga di codice che scriviamo è un tassello di una sfida collettiva che ci spinge a superare i nostri limiti come futuri ingegneri e come team.
+				<br>
+				<br>Non stiamo solo partecipando a una competizione; stiamo dimostrando che l’eccellenza pisana può lasciare il segno anche ad alta quota. Il nostro obiettivo è lanciare un’idea, vederla bruciare sulla rampa e recuperarla pronta per la sfida successiva.
             </p>
         </div>
 
-        <img src="/home_page/placeholder.png" alt="placeholder" class="objective-img"/>
+        <img src="/home_page/team_image.jpeg" alt="team" class="objective-img"/>
     </div>
 </template>
 
@@ -33,6 +36,7 @@
     h1 {
         font-size: 4.5rem;
         margin-bottom: 2rem;
+		margin-top: 0;
     }
 
     p {
@@ -43,7 +47,7 @@
     }
 
     .objective-img {
-        width: 350px; 
+        width: 500px;
         height: auto; 
         margin-top: 2vh;
         margin-left: 5vw; 
