@@ -11,7 +11,7 @@ const newsList = ref([
 
 async function fetch_news(){
 	try{
-		const response = await fetch("http://localhost:7878/database/please_server_send_me_newds");
+		const response = await fetch("/database/please_server_send_me_newds");
 		if(!response.ok){
 			throw new Error("my news are kinda homeless");
 		}

@@ -86,7 +86,7 @@ const Collaboratori_Terzi = ref([
 .separatore {
   color: #4CC9F0;
   text-align: center;
-  font-size: 7rem;
+  font-size: 4rem;
 }
 
 .page-container {

@@ -27,44 +27,63 @@
 </template>
 
 <style scoped>
-.container{
-	color: white;
-	margin-left: auto;
-	margin-right: auto;
-	width: fit-content;
-}
-.input{
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
-	font-size: 1.3em;
-	border-radius: 10px;
-	border: solid #E04814;
-	background-color: #B8B8B8;
-}
-h1{
-	margin-top: -5%;
-	margin-bottom: 5%;
-	font-size: 3em;
-}
-.txt{
-	width: 80%;
-	height: 5vh;
-	margin-bottom: 5vh;
-}
-.btn{
-
-}
-div{
-	background-color: rgba(28, 42, 106, 0.57);
-	padding-top: 3%;
-	padding-bottom: 3%;
-	border-radius: 40px;
-	width: 80%;
-	margin-left: auto;
-	margin-right: auto;
-	transform: translate(0, -5%);
+.container {
+    color: white;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%; /* Cambiato da fit-content per permettere il centraggio del testo */
+    max-width: 1200px; /* Evita che diventi troppo largo su schermi giganti */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center; /* Centra tutto il contenuto testuale */
 }
 
+h1 {
+    font-family: 'Nasalization', sans-serif; /* Applichiamo il tuo nuovo font */
+    text-transform: uppercase;
+    margin-top: 20px; 
+    margin-bottom: 30px;
+    font-size: 2.5rem; /* Usare rem/em è meglio per la responsività rispetto a vh/vw */
+    width: 90%; /* Diamo un po' di respiro ai lati */
+    line-height: 1.2;
+}
 
+div {
+    background-color: rgba(28, 42, 106, 0.57);
+    padding: 40px 20px;
+    border-radius: 40px;
+    width: 80%;
+    max-width: 600px; /* Impedisce al form di diventare troppo largo */
+    margin: 0 auto;
+}
+
+.input {
+    display: block;
+    margin: 0 auto 20px auto; /* Centra gli input e aggiunge spazio sotto */
+    font-family: 'Inter', sans-serif; /* Usiamo Inter per gli input */
+    font-size: 1.1rem;
+    padding: 10px 15px;
+    border-radius: 10px;
+    border: 2px solid #E04814;
+    background-color: #B8B8B8;
+    width: 90%;
+}
+
+.btn {
+    width: auto;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 25px;
+    background: #0F1B31;
+    color: white;
+    transition: transform 0.2s;
+}
+
+.btn:hover {
+	background-color: #E04814;
+    transform: scale(1.05);
+}
 </style>

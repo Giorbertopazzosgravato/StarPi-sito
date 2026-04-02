@@ -4,7 +4,7 @@ import { reactive, ref, watch } from "vue";
 const cards = reactive([
     {
         title: "FLIGHT DYNAMICS",
-        descrizione: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+        descrizione: "È il cervello matematico dietro ogni lancio. Questo reparto trasforma le leggi della fisica in traiettorie reali, ottimizzando la stabilità e le performance aerodinamiche del vettore. Attraverso simulazioni avanzate e analisi del bilanciamento dei carichi, il team di Flight Dynamics definisce l’architettura interna del razzo e prevede ogni sua mossa, dal distacco dalla rampa fino all’apertura dei paracadute.",
         image_src: new URL("/home_page/flight-dynamics-icon.png", import.meta.url).href,
     },
     {
@@ -28,7 +28,7 @@ const cards = reactive([
     },
     {
         title: "RECOVERY SYSTEM",
-        descrizione: "Lorem Ipsum is simply dummy text of the printing and typesetting industry...",
+        descrizione: "La nostra missione è riportare a terra il lavoro di mesi, intatto e pronto a volare di nuovo. Ci occupiamo della progettazione e dell’integrazione dei sistemi di espulsione e dei paracadute, gestendo la fase più critica del post-apogeo. Dallo studio dei tempi di deploy alla resistenza strutturale dei vincoli, lavoriamo perché ogni discesa sia controllata, sicura e perfettamente calcolata.",
         image_src: new URL("/home_page/recovery-system-icon.png", import.meta.url).href,
     },
     {

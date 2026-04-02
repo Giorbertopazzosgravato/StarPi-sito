@@ -69,7 +69,7 @@
 
   async function fetch_teams(){
 	  try{
-		  const response = await fetch("http://localhost:7878/database/send_me_teams/" + anno.value);
+		  const response = await fetch("/database/send_me_teams/" + anno.value);
 		  if(!response.ok){
 			  throw new Error("my teams are kinda homeless");
 		  }
