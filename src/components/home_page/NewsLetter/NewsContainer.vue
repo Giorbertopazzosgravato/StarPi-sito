@@ -83,14 +83,16 @@ function scrollRight(){
     margin: 0 auto;
     padding: 20px;
 }
-.newsContainer{
-	display: flex;
-	background-color: rgba(28, 42, 106, 0.57);
-	max-width: 55vw;
-	overflow: scroll;
-	gap: 5vw;
-	border-radius: 40px;
-	padding: 2%;
+.newsContainer {
+    display: flex;
+    background-color: rgba(28, 42, 106, 0.57);
+    max-width: 55vw;
+    overflow-x: auto;
+    overflow-y: hidden;
+    gap: 30px;      
+    border-radius: 40px;
+    padding: 20px;
+    align-items: flex-start;
 }
 
 .nav-button {

@@ -16,30 +16,66 @@ defineProps({
 </script>
 
 <template>
-
-<a class="container2" :href="link">
-	<img :src="image" alt="immagine" class="image">
-	<h1>{{ title }}</h1>
-</a>
+  <a class="container2" :href="link">
+    <div class="image-wrapper">
+      <img :src="image" alt="immagine" class="image">
+    </div>
+    <h2 class="news-title">{{ title }}</h2>
+  </a>
 </template>
 
 <style scoped>
-.image{
-	width: 15vw;
-	height: 15vw;
-	background-size: 100% 100%;
-	background-position: center;
-	background-repeat: no-repeat;
-	margin-left: auto;
-	margin-right: auto;
-}
-.container2{
-	justify-content: center;
-	text-align: center;
-	width: 15vw;
-	height: fit-content;
-	color: white;
+.container2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    width: 200px;        
+    flex-shrink: 0;    
+    margin: 15px;
 }
 
+.image-wrapper {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    border-radius: 12px;
+}
 
+.image {
+    width: 100%;         
+    aspect-ratio: 1 / 1;  
+    object-fit: cover;   
+    border-radius: 20px; 
+    display: block;
+}
+
+.container2:hover .image {
+    transform: scale(1.1);
+}
+
+.news-title {
+    font-family: 'Nasalization', sans-serif;
+    margin-top: 15px;
+    width: 100%;
+    
+    /* MAGIA: font-size: clamp(minimo, preferito, massimo) */
+    font-size: clamp(1rem, 1.5vw, 1.8rem);
+    
+    line-height: 1.2;
+    text-transform: uppercase;
+    
+    /* Evita che il testo lunghissimo rompa tutto */
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+/* Gestione per schermi piccoli (Mobile) */
+@media (max-width: 768px) {
+    .container2 {
+        max-width: 150px; /* Card più piccole su mobile */
+    }
+}
 </style>
