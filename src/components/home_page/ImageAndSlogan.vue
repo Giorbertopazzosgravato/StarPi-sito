@@ -11,8 +11,8 @@
 
     <div class="slogan-container">
       <p class="slogan-text">
-        We are proud to present the student team, founded in 2024 in Pisa, which designs,<br>
-        manufactures and tests rocket models to compete in EuRoC.
+		  Siamo orgogliosi di presentare il team studentesco, fondato nel 2024 a Pisa, che progetta,<br>
+		  produce e testa modelli di razzi per competere in EuRoC.
       </p>
     </div>
   </div>

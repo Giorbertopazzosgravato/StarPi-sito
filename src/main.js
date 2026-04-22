@@ -25,7 +25,7 @@ const routes = [
     {path: "/AreaPrivata/:pathMatch(.*)", component: utenza,             props:true  },
     {path: "/Master",                     component: amministrazione,    props:false },
     {path: "/IscrizioneGiornale",         component: IscrizioneGiornale, props:false },
-    {path: '/:pathMatch(.*)',             component: ContactUs,           props:false }
+    {path: '/:pathMatch(.*)',             component: ContactUs,          props:false }
 ]
 
 const router = createRouter({

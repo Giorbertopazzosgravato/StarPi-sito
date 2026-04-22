@@ -64,13 +64,13 @@
         </ul>
       </div>
 
-      <div class="footer-column newsletter-col">
-        <h3 class="footer-title">Iscrizione newsletter</h3>
-        <form class="newsletter-form" @submit.prevent>
-          <input type="email" placeholder="Iscriviti qui!" required>
-          <button type="submit">Subscribe</button>
-        </form>
-      </div>
+<!--      <div class="footer-column newsletter-col">-->
+<!--        <h3 class="footer-title">Iscrizione newsletter</h3>-->
+<!--        <form class="newsletter-form" @submit.prevent>-->
+<!--          <input type="email" placeholder="Iscriviti qui!" required>-->
+<!--          <button type="submit">Subscribe</button>-->
+<!--        </form>-->
+<!--      </div>-->
     </div>
 
     <div class="footer-bottom">

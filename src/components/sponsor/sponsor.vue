@@ -17,7 +17,8 @@ const Collaboratori_Secondari = ref([
 ]);
 
 const Collaboratori_Terzi = ref([
-  {titolo:"BLUETTI",            descrizione:"Palese non me ne ero dimenticato", imageURL:"/sponsor_page/BLUETTI.png",     categoria:"", riferimento:"https://it.bluettipower.eu/"}
+  {titolo:"BLUETTI",            descrizione:"Palese non me ne ero dimenticato", imageURL:"/sponsor_page/BLUETTI.png",     categoria:"", riferimento:"https://it.bluettipower.eu/"},
+	{titolo: "Péguet", descrizione: "", imageURL: "/sponsor_page/peguet.jpeg", categoria: "", riferimento: "https://www.peguet.com/peguet-maillons-rapides"}
 ]);
 </script>
 

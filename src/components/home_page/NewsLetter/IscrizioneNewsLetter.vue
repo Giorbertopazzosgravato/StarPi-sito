@@ -4,7 +4,7 @@
 
 <template>
 	<form action="/IscrizioneGiornale" class="container" method="post">
-		<h1>Ti piace quello che vedi? Iscriviti alla newsletter!</h1>
+		<h1>Ti piace quello che vedi?<br>Iscriviti alla newsletter!</h1>
 		<div>
 			<input type="text" name="nome" id="nome" class="input txt" placeholder="nome">
 			<input type="email" name="e-mail" id="email" class="input txt" placeholder="e-mail">

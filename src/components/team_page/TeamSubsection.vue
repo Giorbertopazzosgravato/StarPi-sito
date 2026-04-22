@@ -2,7 +2,7 @@
 import CapoDipartimento from "@/components/team_page/CapoDipartimento.vue";
 import PersonCard from "@/components/team_page/PersonCard.vue";
 
-defineProps({
+const props = defineProps({
 	nome_dipartimento: {
 		type: String,
 		default: "Giacomo e' fortissimo"
@@ -22,7 +22,7 @@ defineProps({
 		},
 		quote: {
 			type: String,
-			default: "te lo metto in culo con le cache"
+			default: ""
 		},
 		link:{
 			type: String,
@@ -48,6 +48,7 @@ defineProps({
 		}
 	}]
 })
+console.log(props.capo_dipartimento)
 </script>
 
 <template>
@@ -58,7 +59,7 @@ defineProps({
 						  :nome="capo.nome"
 						  :cognome="capo.cognome"
 						  :imgURL="capo.imgURL"
-						  :quote="capo.quote"
+						  :quote="(capo.quote !== null)? capo.quote : 'Chief of ' + nome_dipartimento"
 						  :link="capo.link"
 		/>
 		<div class="persone">

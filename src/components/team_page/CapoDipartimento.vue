@@ -14,7 +14,7 @@ defineProps({
 	},
 	quote: {
 		type: String,
-		default: "te lo metto in culo con le cache"
+		default: ""
 	},
 	link:{
 		type: String,
@@ -29,7 +29,7 @@ defineProps({
 			<img :src="imgURL" alt="immagine">
 			<div class="capoTxtContainer">
 				<h1>{{nome + " " + cognome}}</h1>
-				<p>"{{quote}}"</p>
+				<p v-if="quote !== null">"{{quote}}"</p>
 			</div>
 		</div>
 	</a>
