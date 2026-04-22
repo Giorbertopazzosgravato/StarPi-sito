@@ -80,17 +80,24 @@ console.log(props.capo_dipartimento)
 <style scoped>
 .titolone{
 	color: white;
-	font-size: 4em;
-	margin-left: 5%;
-	margin-top: 5%;
+    font-family: 'Nasalization', sans-serif; /* Il tuo font */
+    text-transform: uppercase;
+    font-size: clamp(2rem, 8vw, 4.5rem); /* Si adatta tra 2rem e 4.5rem in base allo schermo */
+    width: 90%;                         /* Evita che tocchi i bordi */
+    margin: 0 auto;                     /* Lo centra */
+    word-wrap: break-word;              /* Se la parola è troppo lunga, la taglia */
+    overflow-wrap: break-word;
+    line-height: 1.2;                   /* Evita che le righe si sovrappongano se va a capo */
+    text-align: center;
 }
 .persone{
-	display: grid;
-	grid-template-columns: repeat(6, auto);
-	gap: 3vw;
-	width: fit-content;
-	max-width: 90vw;
-	margin-left: auto;
-	margin-right: auto;
+	display: flex;
+    flex-direction: row;    /* Mette le card in riga */
+    justify-content: center; /* Centra le card orizzontalmente */
+    flex-wrap: wrap;        /* FONDAMENTALE: manda a capo se non c'è spazio */
+    gap: 20px;              /* Spazio fisso e ordinato tra le card */
+    width: 100%;
+    margin-top: 30px;
+    padding: 0 10%;         /* Opzionale: lascia un po' di margine ai lati */
 }
 </style>

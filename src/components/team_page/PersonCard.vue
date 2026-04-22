@@ -29,29 +29,44 @@ defineProps({
 </template>
 
 <style scoped>
-.PersonCardContainer{
-	display: grid;
-	text-align: center;
-	width: fit-content;
-	margin-left: auto;
-	margin-right: auto;
+.PersonCardContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    
+    /* --- LA STABILITÀ --- */
+    width: 150px;           /* Larghezza fissa invece di vw */
+    flex-shrink: 0;         /* IMPEDISCE al Flexbox di rimpicciolire la card */
+    margin: 10px;           /* Margine di sicurezza */
 }
-.PersonCardName{
-	color: white;
-	font-size: 2em;
-	margin-top: -0.1%;
-	margin-bottom: -10%;
+
+.imgContainer {
+    width: 130px; 
+    height: 160px;
+    overflow: hidden;
+    /* --- CORNICE PICCOLA ARANCIONE --- */
+    border: 3px solid #E04814; 
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-.imgContainer{
-	margin-left: auto;
-	margin-right: auto;
-	width: 10vw;
-	height: 20vh;
-	overflow: hidden;
-	display: flex;
-	justify-content: center;
+
+.imgContainer img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Riempie la cornice senza deformarsi */
 }
-.imgContainer img{
-	height: 20vh;
+
+.PersonCardName {
+    color: white;
+    font-size: 1.1rem;
+    margin-top: 8px;
+    width: 100%;            /* Prende tutta la larghezza della card */
+    word-wrap: break-word;  /* Costringe le parole lunghe ad andare a capo */
+    overflow-wrap: break-word;
 }
 </style>
