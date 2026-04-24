@@ -20,6 +20,12 @@
           <a class="sponsor-card" target="_blank" href="/sponsor">
             <img src="/sponsor_page/CRMcomposti.png" alt="CRM Composti" />
           </a>
+			<a class="sponsor-card" target="_blank" href="/sponsor">
+				<img src="/sponsor_page/EUROAVIAPisa.png" alt="CRM Composti" />
+			</a>
+			<a class="sponsor-card" target="_blank" href="/sponsor">
+				<img src="/sponsor_page/BLUETTI.png" alt="CRM Composti" />
+			</a>
         </div>
       </div>
     </div>
