@@ -4,15 +4,15 @@ import ProjectCard from "@/components/progetti_page/ProjectCard.vue";
 
 // Dati aggiornati con i percorsi corretti delle tue immagini
 const progetti = ref([
-  // {
-  //   title: "Rockery Team",
-  //   img: "/progetti_page/rockery_logo.jpg",
-  //   link: "/progetti/rockery"
-  // },
-  { 
-    title: "Leaning project", 
+  {
+     title: "Rocketry Project",
+     img: "/progetti_page/rocketry_logo.png",
+     link: "/Rocketry"
+   },
+  {
+    title: "Leaning project",
     img: "/progetti_page/leaning_project.png",
-    link: "https://www.leaningproject.it/" /* Link diretto esterno */
+    link: "https://www.leaningproject.it/"
   },
 ]);
 </script>
@@ -20,9 +20,9 @@ const progetti = ref([
 <template>
   <div class="page-container">
     <div class="header-logo-container">
-      <img 
+      <img
         src="/progetti_page/progetti_logo.png"
-        alt="StarPi Progetti" 
+        alt="StarPi Progetti"
         class="top-logo"
       >
     </div>
@@ -30,8 +30,8 @@ const progetti = ref([
     <hr class="separator">
 
     <div class="projects-grid">
-      <ProjectCard 
-        v-for="(p, index) in progetti" 
+      <ProjectCard
+        v-for="(p, index) in progetti"
         :key="index"
         :title="p.title"
         :imageURL="p.img"
