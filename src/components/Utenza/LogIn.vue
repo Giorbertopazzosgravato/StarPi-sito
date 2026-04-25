@@ -12,5 +12,4 @@
 		<input type="password" name="pwd" id="pwd"><br>
 		<input type="submit" value="login" id="submit">
 	</form>
-<!--  95.249.85.132:5173   -->
 </template>
