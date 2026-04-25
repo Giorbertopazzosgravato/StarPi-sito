@@ -4,16 +4,6 @@
   import {useRoute} from "vue-router";
   import {onMounted, ref, watch} from "vue";
 
-  function createCapoDipartimento( nome, quote, linkedin_link, imgURL){
-	  return {
-		  nome, quote, link: linkedin_link, imgURL
-	  }
-  }
-  function createPersona(nome, linkedin_link, imgURL){
-	  return {
-		  nome, link: linkedin_link, imgURL
-	  }
-  }
 
   const route = useRoute()
   const anno = ref(Number(useRoute().params.pathMatch) || 2025)
@@ -29,29 +19,31 @@
 		  anno.value = validaAnno(newPath)
 	  }
   )
-  const teams = ref([{
-	  dipartimento : "Sconosciuto",
-	  capo: {
-		  nome: "Giacomo",
-		  cognome: "Consani",
-		  ruolo: "chief",
-		  link: "",
-	  },
-	  persone:[
-		  {
-			  nome: "Riccardo",
-			  cognome: "scaletta",
-			  link: "",
-			  imgURL: "car.gif"
-		  },
-		  {
-			  nome: "Mattia",
-			  cognome: "Drogo",
-			  link: "",
-			  imgURL: "car.gif"
-		  }
-	  ]
-  }])
+  const teams = ref([
+	//   {
+	//   dipartimento : "Sconosciuto",
+	//   capo: {
+	// 	  nome: "Giacomo",
+	// 	  cognome: "Consani",
+	// 	  ruolo: "chief",
+	// 	  link: "",
+	//   },
+	//   persone:[
+	// 	  {
+	// 		  nome: "Riccardo",
+	// 		  cognome: "scaletta",
+	// 		  link: "",
+	// 		  imgURL: "car.gif"
+	// 	  },
+	// 	  {
+	// 		  nome: "Mattia",
+	// 		  cognome: "Drogo",
+	// 		  link: "",
+	// 		  imgURL: "car.gif"
+	// 	  }
+	//   ]
+  // }
+  ])
   function preAnno(){
 	  if(anno.value > 2024){
 		  anno.value--;

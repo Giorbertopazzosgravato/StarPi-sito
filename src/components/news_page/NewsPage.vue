@@ -4,9 +4,9 @@ import NewsCard from "@/components/news_page/NewsCard.vue";
 import IscrizioneNewsLetter from "@/components/news_page/IscrizioneNewsLetter.vue";
 
 const newsList = ref([
-  { titolo: "Joker Persona 5", descrizione: "dasdsadasdasdasd.", imageURL: "/news_page/sukuna.png", categoria: "OFFICIAL" },
-  { titolo: "Non ci crederete mai", descrizione: "Se ti svegli con quattro palle il nemico lo hai alle spalle.", imageURL: "/news_page/gojo_one_tooth.webp", categoria: "TECH" },
-  { titolo: "Inter merda", descrizione: "suca", imageURL: "/news_page/todo.jpeg", categoria: "SPONSOR" }
+  // { titolo: "Joker Persona 5", descrizione: "dasdsadasdasdasd.", imageURL: "/news_page/sukuna.png", categoria: "OFFICIAL" },
+  // { titolo: "Non ci crederete mai", descrizione: "Se ti svegli con quattro palle il nemico lo hai alle spalle.", imageURL: "/news_page/gojo_one_tooth.webp", categoria: "TECH" },
+  // { titolo: "Inter merda", descrizione: "suca", imageURL: "/news_page/todo.jpeg", categoria: "SPONSOR" }
 ]);
 
 async function fetch_news(){

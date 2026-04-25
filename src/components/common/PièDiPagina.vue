@@ -20,6 +20,12 @@
           <a class="sponsor-card" target="_blank" href="/sponsor">
             <img src="/sponsor_page/CRMcomposti.png" alt="CRM Composti" />
           </a>
+			<a class="sponsor-card" target="_blank" href="/sponsor">
+				<img src="/sponsor_page/EUROAVIAPisa.png" alt="CRM Composti" />
+			</a>
+			<a class="sponsor-card" target="_blank" href="/sponsor">
+				<img src="/sponsor_page/BLUETTI.png" alt="CRM Composti" />
+			</a>
         </div>
       </div>
     </div>
@@ -64,13 +70,13 @@
         </ul>
       </div>
 
-      <div class="footer-column newsletter-col">
-        <h3 class="footer-title">Iscrizione newsletter</h3>
-        <form class="newsletter-form" @submit.prevent>
-          <input type="email" placeholder="Iscriviti qui!" required>
-          <button type="submit">Subscribe</button>
-        </form>
-      </div>
+<!--      <div class="footer-column newsletter-col">-->
+<!--        <h3 class="footer-title">Iscrizione newsletter</h3>-->
+<!--        <form class="newsletter-form" @submit.prevent>-->
+<!--          <input type="email" placeholder="Iscriviti qui!" required>-->
+<!--          <button type="submit">Subscribe</button>-->
+<!--        </form>-->
+<!--      </div>-->
     </div>
 
     <div class="footer-bottom">

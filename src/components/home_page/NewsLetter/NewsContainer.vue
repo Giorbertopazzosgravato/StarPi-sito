@@ -5,21 +5,21 @@ import {onMounted, ref} from "vue";
 const newsContainer = ref(null);
 
 const news = ref([
-	{
-		image: "/car.gif",
-		title: "waaaaaaa",
-	},
-	{
-		image: "/car.gif",
-		title: "weeeeeee",
-	},
-	{
-		image: "/car.gif",
-		title: "wiiiiiii",
-	},
-	{
-
-	}
+	// {
+	// 	image: "/car.gif",
+	// 	title: "waaaaaaa",
+	// },
+	// {
+	// 	image: "/car.gif",
+	// 	title: "weeeeeee",
+	// },
+	// {
+	// 	image: "/car.gif",
+	// 	title: "wiiiiiii",
+	// },
+	// {
+	//
+	// }
 ]);
 
 async function fetch_news(){

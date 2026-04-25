@@ -32,7 +32,7 @@ onUnmounted(() => { window.removeEventListener("scroll", handleScroll); });
 const isSidebarOpen = ref(false);
 const closeSidebar = () => { isSidebarOpen.value = false; };
 const route = useRoute();
-const isActiveRoute = (path) => route ? route.path === path : false;
+const isActiveRoute = (path) => route ? route.path.startsWith(path) : false;
 
 const navLinks = [
   { title: "Home",       link: "/home" },

@@ -11,7 +11,7 @@
       <p class="newsletter-sub">Abbiamo una newsletter! Cosa aspetti ad iscriverti?</p>
     </div>
 
-    <form class="newsletter-form" @submit.prevent>
+    <form action="/IscrizioneGiornale" class="newsletter-form" @submit.prevent>
       <input type="text" placeholder="Come ti chiami?" class="n-input" />
       <input type="email" placeholder="Inserisci la tua e-mail!" class="n-input" />
       <button type="submit" class="n-btn">
