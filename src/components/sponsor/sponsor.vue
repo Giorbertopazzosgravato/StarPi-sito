@@ -8,7 +8,8 @@ const Collaboratori_Principali = ref([
   {titolo:"Nlcomp",             descrizione:"Ebbene si",                        imageURL:"/sponsor_page/nlcomp.webp",     categoria:"", riferimento:"https://northernlightcomposites.com/"},
   {titolo:"Università di pisa", descrizione:"Nonostante tutto",                 imageURL:"/sponsor_page/unipi.jpg",       categoria:"", riferimento:"https://www.unipi.it/"},
   {titolo:"CRM composti",       descrizione:"Mettere una descrizione",          imageURL:"/sponsor_page/CRMcomposti.png", categoria:"", riferimento:"https://crmcompositi.com/"},
-  {titolo:"EUROAVIA Pisa",      descrizione:"Si vola",                          imageURL:"/sponsor_page/EUROAVIAPisa.png",categoria:"", riferimento:"https://pisa.euroavia.eu/"}
+  {titolo:"EUROAVIA Pisa",      descrizione:"Si vola",                          imageURL:"/sponsor_page/EUROAVIAPisa.png",categoria:"", riferimento:"https://pisa.euroavia.eu/"},
+	{titolo:"BLUETTI",            descrizione:"Palese non me ne ero dimenticato", imageURL:"/sponsor_page/BLUETTI.png",     categoria:"", riferimento:"https://it.bluettipower.eu/"}
 ]);
 
 const Collaboratori_Secondari = ref([
@@ -17,7 +18,6 @@ const Collaboratori_Secondari = ref([
 ]);
 
 const Collaboratori_Terzi = ref([
-  {titolo:"BLUETTI",            descrizione:"Palese non me ne ero dimenticato", imageURL:"/sponsor_page/BLUETTI.png",     categoria:"", riferimento:"https://it.bluettipower.eu/"},
 	{titolo: "Péguet", descrizione: "", imageURL: "/sponsor_page/peguet.jpeg", categoria: "", riferimento: "https://www.peguet.com/peguet-maillons-rapides"}
 ]);
 </script>
