@@ -7,10 +7,10 @@
   <br>
   <br>
   <br>
-    <button>
-      <a href="/AreaPrivata">
-        accedi utente
-      </a>
-    </button>
-
+	<form action="/troncami_dentro" method="post" autocomplete="on">
+		<input type="email" name="email" id="email"><br>
+		<input type="password" name="pwd" id="pwd"><br>
+		<input type="submit" value="login" id="submit">
+	</form>
+<!--  95.249.85.132:5173   -->
 </template>
