@@ -19,30 +19,3 @@ npm run dev
 ```sh
 npm run build
 ```
-
-# Sito StarPi todo:
-
-### Backend { Giacomo }
-- [ ] Studiare Actix (per capire come mandare le immagini e rendere il sito scalabile)<br>
-- [ ] Studiare sql su rust<br>
-- [ ] Implementare un database accedibile su rust<br>
-
-### Frontend
-- [X] Ristudiare i router su Vue (routes con '/#/', le pagine devono aprirsi
-bene) { Riccardo }<br>
-- [X] Le pagine si ricaricano bene
-- [ ] fare news che quando si caricano sulla pagina girano [vedere sohcahtoa] (https://thirdspacelearning.com/gcse-maths/geometry-and-measure/sohcahtoa/)
-- [ ] Rifare pagina progetti<br>
-- [ ] Fare pagina Dipartimenti<br>
-- [ ] Fare pagina Galleria<br>
-- [ ] Rifare lo stile sulle pagine, di modo che siano ben visibili su ogni schermo { Mattia }
-
-### R
- - [x] pagina sponsor   // +il lo sponsor BLUETTI  
- - [x] piè di pagina
- - [x] miglorare pagina 404
-
-
-si rimane in attesa di:
-    info sul materiale per i progetti
-    correzzioni varie
